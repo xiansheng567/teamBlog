@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23053037-黄皓文-个人网站</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790011_l6ufqgn21t.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790011_eqfjhhhat7n.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790011_a9uk3f5a8er.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790011_as4br7rz6uh.css">
+    <style>
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+.nav-links a:hover {
+    background-color: #555;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+      .album {
+        background-image: url("../../src/team/huanghaowen/images/p5.jpg");
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.album-header {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.album-photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.photo {
+    width: calc(33.333% - 20px);
+    margin: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.photo:hover {
+    transform: scale(1.05);
+}
+.photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* 模态框样式 */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+      #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #backToTop:hover {
+            background-color: #0056b3;
+        }
+      .introduce{
+        background-image: url('../../src/team/huanghaowen/images/p5.jpg');
+        background-color: aliceblue;
+        width: 100%;
+      }
+      body{
+        background-image: url('../../src/team/huanghaowen/images/p6.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+        .text{
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            background-color:aqua;
+        }
+        @import url(//at.alicdn.com/t/c/font_4745106_6qj7vrg0zos.css);
+        .avatar-container {
+        width: 150px; /* 头像宽度 */
+        height: 150px; /* 头像高度 */
+        overflow: hidden; /* 隐藏超出容器的部分 */
+        border-radius: 50%; /* 圆形头像 */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+      }
+    
+      /* 头像图片样式 */
+      .avatar-container img {
+        left: 100%;
+        width: 100%; /* 图片宽度适应容器 */
+        height: 100%; /* 图片高度适应容器 */
+        object-fit: cover; /* 图片内容适应容器大小 */
+      }
+      .Album-container{
+        width: 100%; /* 盒子的固定宽度 */
+        margin-left: 20px; /* 左边距为屏幕宽度的10% */
+        margin-right: 20px; 
+      }
+
+#scrollToTopButton {
+            display: none; /* 默认不显示按钮 */
+            position: fixed; /* 固定定位 */
+            bottom: 20px; /* 距离底部20px */
+            right: 20px; /* 距离右侧20px */
+            z-index: 99; /* 确保按钮在其他内容之上 */
+            border: none;
+            outline: none;
+            background-color: black; /* 按钮背景颜色 */
+            color: white; /* 文字颜色 */
+            cursor: pointer; /* 鼠标悬停时的指针样式 */
+            padding: 15px; /* 内边距 */
+            border-radius: 10px; /* 圆角 */
+            font-size: 18px; /* 字体大小 */
+        }
+
+        #scrollToTopButton:hover {
+            background-color: #45a049; /* 悬停时的背景颜色 */
+        }
+
+    </style>
+<link rel="stylesheet" href="../../css/nav.css"></link>
+</head>
+<body> 
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="../show.html">首页</a></li>
+                <li><a href="album.html">相册</a></li>
+                <li><a href="link.html">留言</a></li>
+                <li>
+                    <a href="../team.html">团队</a>
+                    <ul class="sub-menu">
+                        <li><a href="./huangjunyu.html">黄俊煜</a></li>
+                        <li><a>成员2</a></li>
+                        <li><a>成员3</a></li>
+                        <li><a>成员4</a></li>
+                        <li><a>成员5</a></li>
+                        <li><a>成员6</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+ <a href="#" id="scrollToTopButton">返回顶部</a>
+  </div>
+
+    <div class="avatar-container" style="margin-top: 80px;">
+        <img class=" long-press-able-img " class=" long-press-able-img " src="../../src/team/huanghaowen/images/p2.jpg" alt="User Avatar">
+      </div>
+    <div class="introduce">
+      <p class="iconfont icon-geren">个人介绍</p>
+        <ul>
+            <li>姓名:黄皓文</li>
+            <li>学历:本科在读</li>
+            <li>爱好:打羽毛球</li>
+            <li>家乡:广东</li>
+        </ul>
+        <p class="iconfont icon-zhuanyezhishijineng">专业技能</p>
+        <ul>
+          <li>1</li>
+          <li>1</li>
+          <li>1</li>
+          <li>1</li>
+        </ul>
+        <p class="iconfont icon-dianhua">联系方式</p>
+        <ul>
+          <li>邮箱:459972616@qq.com</li>
+          <li>电话:18169901327</li>
+          <li>微信:Chou_101</li>
+        </ul>
+    </div>
+    </div>
+
+      <div class="Album-container">
+        <div class="album">
+            
+            <div class="album-header">
+                <h1 class="iconfont icon-mti-zhaopian">我的相册</h1>
+            </div>
+            <div class="album-photos">
+                <div class="photo" onclick="openModal('images/1.jpg')">
+                    <img class="_double-img_c5n3b_69 long-press-able-img " class="_double-img_c5n3b_69 long-press-able-img " src="../../src/team/huanghaowen/images/p3.jpg" alt="Photo 1 Thumbnail">
+                </div>
+                <div class="photo" onclick="openModal('images/p2.jpg')">
+                    <img class="_double-img_c5n3b_69 long-press-able-img " class="_double-img_c5n3b_69 long-press-able-img " src="../../src/team/huanghaowen/images/p2.jpg" alt="Photo 2 Thumbnail">
+                </div>
+                <div class="photo" onclick="openModal('images/p7.jpg')">
+                    <img class="_double-img_c5n3b_69 long-press-able-img " class="_double-img_c5n3b_69 long-press-able-img " src="../../src/team/huanghaowen/images/p7.jpg" alt="Photo 2 Thumbnail">
+                </div>
+                <div class="photo" onclick="openModal('images/p4.jpg')">
+                    <img class="_double-img_c5n3b_69 long-press-able-img " class="_double-img_c5n3b_69 long-press-able-img " src="../../src/team/huanghaowen/images/p4.jpg" alt="Photo 2 Thumbnail">
+                </div>
+                <div class="photo" onclick="openModal('images/p2.jpg')">
+                    <img class="_double-img_c5n3b_69 long-press-able-img " class="_double-img_c5n3b_69 long-press-able-img " src="../../src/team/huanghaowen/images/p2.jpg" alt="Photo 2 Thumbnail">
+                </div>
+                <div class="photo" onclick="openModal('images/雪花.png')">
+                    <img class="_double-img_c5n3b_69 long-press-able-img " class="_double-img_c5n3b_69 long-press-able-img " src="../../src/team/huanghaowen/images/雪花.png" alt="Photo 2 Thumbnail">
+                </div>
+                
+            </div>
+        </div>
+      
+    </div>
+
+    <script>
+ var scrollToTopButton = document.getElementById('scrollToTopButton');
+
+// 当用户滚动页面时，显示或隐藏按钮
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopButton.style.display = "block";
+    } else {
+        scrollToTopButton.style.display = "none";
+    }
+};
+// 当点击按钮时，平滑滚动到页面顶部
+scrollToTopButton.onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+        function playMusic() {
+  var music = document.querySelector("#musicbox audio");
+  music.play();
+}
+function stopMusic() {
+  var music = document.querySelector("#musicbox audio");
+  music.pause();
+  music.currentTime = 0;
+}
+// 为'scrolled'类添加样式
+const styles = document.createElement('style');
+styles.textContent = `
+    .navbar.scrolled {
+        background-color: #555; /* 滚动时的背景颜色 */
+    }
+`;
+document.head.appendChild(styles);
+    </script>
+   
+  </div>
+
+ 
+</body>
+</html>
