@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/load.css">
+</head>
+<body>
+    <div class="load"  id="load">
+        <img src="../src/taichi.png">
+
+    </div>
+    <div class="login-container">
+        <div class="box">
+            <div class="login" id="login">
+                <div class="mask-login" id="mask-login">
+                    <h2>Login</h2>
+                    <span>Don't have an account?</span>
+                    <button id="login-btn" class="nav-btn" style="--color:#0a0"><span>Register</span></button>
+                </div>
+                <div class="login-form" id="login-form">
+                    <form action="show.html">
+                        <H2>LOGIN!</H2>
+                        <div class="form-group">
+                            <div class="username-input">
+                                <input type="text" id="username" name="username" >
+                                <div class="text">
+                                    <span>u</span>
+                                    <span>s</span>
+                                    <span>e</span>
+                                    <span>r</span>
+                                    <span>n</span>
+                                    <span>a</span>
+                                    <span>m</span>
+                                    <span>e</span>
+                                </div>
+                            </div>
+                            <div class="password-input">
+                                <input type="password" id="password" name="password">
+                                <div class="password-text">
+                                    <span>p</span>
+                                    <span>a</span>
+                                    <span>s</span>
+                                    <span>s</span>
+                                    <span>w</span>
+                                    <span>o</span>
+                                    <span>r</span>
+                                    <span>d</span>
+                                </div>
+                            </div>
+                            
+                            <div class="Remember-password">
+                                <input type="checkbox" id="remember-me" name="remember-me">
+                                <label for="remember-me">Remember me</label>
+                            </div>
+                            <input type="submit" value="Login">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="register">
+
+                <div class="mask-register" id="mask-register" >
+                    <h2>Register</h2>
+                    <span>Already have an account?</span>
+                    <button id="register-btn" class="nav-btn" style="--color:#ffd316"><span>Login</span></button>
+                </div>
+                <div class="register-form" id="register-form">
+                    <form action="">
+                        <h2>REGISTER!</h2>
+                        <div class="form-group">
+                            <div class="username-input">
+                                <label for="username-register">Username</label>
+                                <input type="text" id="username-register" name="username-register" >
+                            </div>
+                            <div class="password-input">
+                                <label for="password-register">Password</label>
+                                <input type="password" id="password-register" name="password-register">
+                            </div>
+                            <input type="submit" value="Register">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="mask" id="mask">
+
+            </div>
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+</html>
