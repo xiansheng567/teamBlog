@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4770634_hqaf7pezmsw.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .head {
+            width: 100%;
+            display: flex;
+            top: 0;
+            position: sticky;
+            height: 60px;
+            background-color: #fff;
+            border-bottom: 2px solid #ccc;
+            justify-content: space-between;
+        }
+
+        .top {
+            width: 300px;
+            height: 60px;
+            display: flex;
+            gap: 2rem;
+            margin-top: 16px;
+        }
+
+        .head a {
+            color: bisque;
+            text-decoration: none;
+        }
+
+        .nav {
+            /* width: 100px; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .head h1 {
+            position: relative;
+            font-size: 2rem;
+            font-weight: normal;
+        }
+
+        /* aside {
+            position: fixed;
+            top: 305px;
+            width: 250px;
+            height: 300px;
+            background-color: #fff;
+            padding: 10px;
+            margin-right: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+            border-radius: 5%;
+        } */
+
+        .tou {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .tou::before {
+            bottom: 3px;
+            content: "";
+            position: relative;
+            width:100px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-image: linear-gradient(#a00, #d5a88b, #124c5c);
+        }
+
+        .tou img {
+            width: 90px;
+margin-top: 5px;
+            position: absolute;
+             top: -30;
+            box-shadow: 0 0 15px rgba(161, 45, 45, 0.8);
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .pas {
+            margin-left: 30px;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .ps {
+
+            border-radius: 10px;
+            border: 2px solid #a00;
+            margin: 8px 0;
+            width: 80%;
+            height: 35px;
+            text-align: center;
+        }
+
+        .pas a {
+            display: block;
+            margin-bottom: 5px;
+            color: #000000;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 3px 0;
+            position: relative;
+        }
+
+        .hea {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .toTop {
+            position: fixed;
+            width: 20px;
+            aspect-ratio: 1;
+            bottom: 200px;
+            right: 90px;
+            padding: 10px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .icon-UP {
+            font-size: 40px !important;
+        }
+
+        .cart-num {
+            position: relative;
+            top: -50px;
+            right: -230px;
+            background-color: #a00;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 0.8em;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            margin: 30px;
+        }
+
+        .atop {
+
+            width: 80%;
+            height: 50px;
+            background-color: #F1F2F3;
+            box-shadow: 2px 3px 5px #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .atop-text {
+            color: #4BC2CE;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .home {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            /* background-color: #f40; */
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+    table{
+        position: relative;
+        width: 100%;
+        border-collapse: collapse;
+        line-height: 2;
+    }
+    .ta-info td{
+        border-bottom: 1px dotted #ccc;
+    }
+    .atop a{
+        text-decoration: none;
+        color: #000;
+    }
+    .picture{
+        display: flex;
+        justify-content: center;
+    }
+    .picture img{
+        width: 80%;
+    height: 80%;
+    object-fit: cover;
+    }
+    footer{
+        display: flex;
+        align-items: center;
+        margin: 2rem auto;
+    }
+    footer span:first-child{
+        text-align: center;
+    }
+    footer span{
+        flex: 1;
+        font-size: 1.2rem;
+    }
+    </style>
+      <style>
+        .head {
+              width: 100%;
+              display: flex;
+              top: 0;
+              position: sticky;
+              height: 60px;
+              background-color: #fff;
+              border-bottom: 2px solid #ccc;
+              justify-content: space-between;
+              border-radius: 10px;
+             
+          }
+  
+          .top {
+              width: 300px;
+              height: 60px;
+              display: flex;
+              gap: 2rem;
+              margin-top: 16px;
+          }
+  
+          .head a {
+              color: bisque;
+              text-decoration: none;
+          }
+  
+          .nav {
+              /* width: 100px; */
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 0.4rem;
+          }
+  
+          .head h1 {
+              position: relative;
+              font-size: 2rem;
+              font-weight: normal;
+              margin: 10px;
+          }
+          .toTop {
+              position: fixed;
+              width: 20px;
+              aspect-ratio: 1;
+              bottom: 200px;
+              right: 90px;
+              padding: 10px 10px;
+              border-radius: 50%;
+              cursor: pointer;
+          }
+  
+          .icon-UP {
+              font-size: 40px !important;
+          }
+  
+      .wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        position: relative;
+        width: 800px;
+        height: 800px;
+        /* aspect-ratio: 16/9; */
+        background-color: #eee;
+        overflow: hidden;
+        margin: auto;
+      }
+  
+      .wrap>* {
+        position: absolute;
+      
+      }
+  
+      /* header,
+      aside,
+      main,
+      footer {
+        position: absolute;
+      } */
+     .wrap header {
+        width: 50%;
+        height: 50%;
+        background-color: #f40;
+        left: 0;
+        top: -400px;
+        animation: mov-down 1s forwards;
+        background-image: url('../../src/team/lidenghuo/preview1.jpg');
+        background-size: cover;
+      }
+  
+    .wrap  footer {
+          width: 50%;
+          height: 50%;
+        background-color: #089;
+        left: 400px;
+        bottom: -400px;
+        animation: mov-up 1s 0.5s forwards;
+        background-image: url('../../src/team/lidenghuo/bg4.webp');
+        background-size: cover;
+      }
+  
+    .wrap  aside {
+        left: -400px;
+        top: 400px;
+        width: 50%;
+        height: 50%;
+        background-color: #ff0;
+        animation: mov-right 1s 1s forwards;
+        background-image: url('../../src/team/lidenghuo/bg3.webp');
+        background-size: cover;
+      }
+    .wrap  main{
+          width: 50%;
+          height: 50%;
+  right: -400px;
+  top:0px;
+  background-color: #ff0;
+  animation: mov-left 1s 1s forwards;
+  background-image: url('../../src/team/lidenghuo/preview.jpg');
+  background-size: cover;
+      }
+  @keyframes mov-left{
+      100%{
+          right: 0;
+      }
+  }
+      @keyframes mov-right {
+        100% {
+          left: 0;
+        }
+      }
+  
+      @keyframes mov-down {
+        100% {
+          top: 0;
+        }
+      }
+  
+      @keyframes mov-up {
+        100% {
+          bottom: -32px;
+        }
+      }
+      .main {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-sizing: border-box;
+              margin: 30px;
+          }
+  
+          .atop {
+  
+              width: 80%;
+              height: 50px;
+              background-color: #F1F2F3;
+              box-shadow: 2px 3px 5px #ccc;
+              padding: 15px;
+              border-radius: 5px;
+          }
+  
+          .atop-text {
+              color: #4BC2CE;
+              font-size: 30px;
+              font-weight: bold;
+          }
+  
+    </style>
+    <link rel="stylesheet" href="../../css/nav.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="../show.html">首页</a></li>
+                <li><a href="../album.html">相册</a></li>
+                <li><a href="../message.html">留言</a></li>
+                <li>
+                    <a href="../team.html">团队</a>
+                    <ul class="sub-menu">
+                        <li><a href="huangjunyu.html">黄俊煜</a></li>
+                        <li><a href="huanghaowen.html">黄皓文</a></li>
+                        <li><a href="huangjiangyang.html">黄建扬</a></li>
+                        <li><a href="lijia.html">李佳</a></li>
+                        <li><a href="lidenghuo.html">李邓活</a></li>
+                        <li><a href="huangyubin.html">黄宇斌</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="hea" id="top">
+
+    </div>
+    <aside>
+     
+    </aside>
+    <main>
+        <div class="main">
+
+            <div class="atop">
+                <span class="atop-text">introduction</span>
+            </div>
+        </div>
+        <div class="home">
+            <div>
+            <div class="tou">
+                <img src="../../src/team/lidenghuo/preview1.jpg" alt="">
+            </div>
+            <div class="pas">
+                <div class="ps">
+                    <a href="javascript::" class="iconfont icon-gouwuche">购物车</a>
+                    <span class="cart-num">0</span>
+                </div>
+                <div class="ps">
+                    <p>资料</p>
+                </div>
+                <div class="ps">
+                    <p>中心</p>
+                </div>
+            </div>
+        </div>
+            <div>
+                <h3>基本情况</h3>
+                <table class="ta-info">
+                    <tbody>
+                        <tr><td>姓名：</td>
+                        <td>李邓活</td></tr>
+                        <tr><td>学校：</td>
+                        <td>广州新华学院</td></tr>
+                        <tr><td>专业：</td>
+                        <td>软件工程</td></tr>
+                        <tr>
+                            <td>年龄：</td>
+                        <td>19</td></tr>
+                        <tr><td>爱好：</td>
+                        <td>打球，刷视频</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="main">
+
+            <div class="atop">
+                <span class="atop-text"><a href="1.html">美文展示</a></span>
+            </div>
+        </div>
+        <div class="picture">
+            <img src="../../src/team/lidenghuo/屏幕截图 2024-12-22 151729.png" alt="">
+        </div>
+        <div class="hea" id="top">
+
+        </div>
+        <div class="main">
+    
+            <div class="atop">
+                <span class="atop-text">我的相册</span>
+            </div>
+        </div>
+      <div class="wrap">
+        <header>
+            
+        </header>
+        <aside>
+            
+        </aside>
+        <main>
+            
+        </main>
+        <footer>
+            
+        </footer>
+      </div>
+    </main>
+    <footer>
+      <span>All rights reeserved©2024 ldh<br>此页面仅用于学习交流</span>
+      
+    </footer>
+    <a href="#top">
+        <div class="toTop">
+            <div class="iconfont icon-UP"></div>
+        </div>
+    </a>
+</body>
+
+</html>

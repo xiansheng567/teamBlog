@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>guide</title>
+<style>
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:aqua;
+    font-family: Arial, sans-serif;
+   background-image: url('../../src/team/lidenghuo/preview.jpg') ;
+   background-repeat: no-repeat;
+   background-size: cover;
+  }
+
+  .progress-container {
+    width: 500px;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 20px;
+    background-color:black;
+    width: 0%;
+    border-radius: 20px;
+    animation: progress 3s ease forwards;
+  }
+
+  @keyframes progress {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="top">
+    <h1>loading......</h1>
+<div class="progress-container">
+  <div class="progress-bar"></div>
+</div>
+</div>
+
+<script>
+  const progressBar = document.querySelector('.progress-bar');
+  progressBar.addEventListener('animationend', function() {
+    window.location.href = 'introduction.html'; // 跳转到主页的URL
+  });
+</script>
+
+</body>
+</html>
