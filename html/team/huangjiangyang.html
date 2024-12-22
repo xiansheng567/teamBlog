@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>斜条纹背景效果</title>
+    
+    <link rel="stylesheet" href="../../css/team/huangjiangyang.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4789985_kz1pdwfvhue.css">
+    <link rel="stylesheet" href="../../css/nav.css">
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const hiddenDiv = document.getElementById('hidden');
+    const button = document.getElementById('btn');
+    const contentDiv = document.getElementById('content');
+    button.addEventListener('click', () => {
+        if (hiddenDiv.classList.contains('active')) {
+            button.textContent = '>';
+            hiddenDiv.classList.remove('active'); // 移除 active 类以隐藏
+            hiddenDiv.classList.add('inactive'); // 添加 inactive 类
+            contentDiv.classList.add('inactive');
+            contentDiv.classList.remove('active');
+            button.classList.add("inactive");
+            button.classList.remove("active");
+        } else {
+            button.textContent = '<';
+            hiddenDiv.classList.add('active'); // 添加 active 类以显示
+            hiddenDiv.classList.remove('inactive'); // 移除 inactive 类
+            contentDiv.classList.add('active');
+            contentDiv.classList.remove('inactive');
+            button.classList.add("active");
+            button.classList.remove("inactive");
+        }
+    });
+});
+</script>>
+<body>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="../show.html">首页</a></li>
+                <li><a href="album.html">相册</a></li>
+                <li><a href="../message.html">留言</a></li>
+                <li>
+                    <a href="../team.html">团队</a>
+                    <ul class="sub-menu">
+                        <li><a href="./team/huangjunyu.html">黄俊煜</a></li>
+                        <li><a href="./team/huanghaowen.html">黄皓文</a></li>
+                        <li><a>成员3</a></li>
+                        <li><a>成员4</a></li>
+                        <li><a>成员5</a></li>
+                        <li><a>成员6</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="hidden" id="hidden">
+        <ul style="margin: 0; padding-top: 300px; list-style: none;">
+
+            <li><a href="#content">首页</a></li>
+            <li><a href="#title">介绍菜单</a></li>
+            <li><a href="#percentage">技能掌握</a></li>
+            <li><a href="#message">自我评价</a></li>
+            <li><a href="#footer">联系我</a></li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <button class="btn" id="btn">></button>
+        <div class="header">
+            <img src="../../src/team/huangjiangyang/touxiang.jpg" alt="头像">
+            <h2>Greenwork</h2>
+            <h4 >Where there's a will there's a way.</h4>
+            <!-- <p>About Me</p>
+            <div class="about">
+               <span class="iconfont">&#xe600;</span>
+               <span class="iconfont">&#xe885;</span>
+               <span class="iconfont">&#xe908;</span>
+            </div> -->
+        </div>
+        <div class="main">
+            <h3 id="title">介绍菜单</h3>
+            <div class="card">
+                
+                <div class="card-content">
+                    <span class="iconfont">&#xe62b;&nbsp;:</span>
+                    <p>黄建扬</p>
+                    
+                </div>
+                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="iconfont">&#xe661;&nbsp;:</span>
+                    <p>广州新华大学</p>
+                </div>
+                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="iconfont">&#xe6a1;&nbsp;:</span>
+                    <p>软件工程专业</p>
+                </div>
+                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+            </div>
+            <!-- 广州新华大学 计算机科学与技术学院 软件工程专业 -->
+            <div class="card">
+                <div class="card-content">
+                    <span class="iconfont">&#xe60c;&nbsp;:</span>
+                    <p>2023.09-2027.06 </p>
+                </div>
+                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="iconfont">&#xe908;&nbsp;:</span>
+                    <p>greenwork@gmail.com</p>
+                </div>
+                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="iconfont">&#xe842;&nbsp;:</span>
+                    <p>+86 138 1234 5678</p>
+                </div>
+                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+            </div>
+            <div class="Percentage" id="percentage">
+                <h3>编程语言能力</h3>
+                <div class="frame02">
+                    <p>C++</p>
+                    <div class="progress-show01">
+                        <div class="progress-bar01" >  &nbsp; 45%</div>
+                    </div>
+                </div>
+                <div class="frame02">
+                    <p>Java</p>
+                    <div class="progress-show02">
+                        <div class="progress-bar02" >  &nbsp; 40%</div>
+                    </div>
+                </div>
+                <div class="frame02">
+                    <p>Html</p>
+                    <div class="progress-show03">
+                        <div class="progress-bar03" >  &nbsp; 50%</div>
+                    </div>
+                </div>
+                <div class="frame02">
+                    <p>Python</p>
+                    <div class="progress-show04">
+                        <div class="progress-bar04" >  &nbsp; 10%</div>
+                    </div>
+                </div>
+            </div>
+            <h3 style="margin-bottom: 20px;">自我评价</h3>
+            <div class="message" id="message">
+               
+                <p>我是一个热爱编程的学生，喜欢研究新技术，
+                    擅长解决问题，有较强的逻辑思维能力，善于沟通，
+                    能够快速学习新知识，有较强的团队合作精神。
+                    我相信，只要努力学习，不断进步，
+                    我一定可以成为一名出色的软件工程师。Lorem ipsum dolor sit,
+                    amet consectetur adipisicing elit. Eaque, 
+                    illum aperiam optio voluptatum omnis!</p>
+            </div>
+        </div>
+        <div class="footer" id="footer">
+            <div class="about">
+                <span class="iconfont" style="margin: 10px 10px; font-size: 50px!important;">&#xe600;</span>
+                <span class="iconfont" style="margin: 10px 10px; font-size: 50px!important;">&#xe885;</span>
+                <span class="iconfont" style="margin: 10px 10px; font-size: 50px!important;">&#xe908;</span>
+             </div><p style="margin: 0; ">
+                <a style="text-decoration: none; color: rgb(0, 0, 0);" href="/privacy-policy">隐私政策</a> |
+                <a style="text-decoration: none; color: rgb(0, 0, 0);" href="/terms-of-service">使用条款</a>
+            </p>
+             <h3><p style="margin: 0;">邮箱: greenwork@gmail.com | 电话: 138 1234 5678</p></h3>
+        </div>
+        <div style="height: 200px;"></div>
+    </div>
+    
+</body>
+<style>
+    
+</style>
+</html>
