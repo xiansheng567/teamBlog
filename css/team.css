@@ -16,7 +16,7 @@ header {
     align-items: center;
     color: white;
     font-size: 2em;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(244,244,244, 1) 100%), url('../src/banner.webp') no-repeat 0 30%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(244,244,244, 1) 100%), url('../src/banner.webp') no-repeat center 30%;
     background-size: cover;
 }
 
@@ -320,21 +320,18 @@ footer {
 }
 .progress-bar01 {
     height: 24px;
-    width: 45%; /* 初始宽度为0 */
+    width: 45%; 
     background-color: aqua;
     border-radius: 13px;
     margin: 3px;
     animation: identifier1 4s ;
-    /* transition:  0.5s ease-in-out; 添加过渡效果 */
-    /* animation: identifier 4s infinite steps(3,start); */
 }
 .progress-bar02 {
     height: 24px;
-    width: 40%; /* 初始宽度为0 */
+    width: 40%; 
     background-color: rgb(135, 65, 85);
     border-radius: 13px;
     margin: 3px;
-    /* transition:  0.5s ease-in-out; 添加过渡效果 */
     animation: identifier2 4s ;
 }
 .progress-bar03 {
@@ -343,7 +340,6 @@ footer {
     background-color: rgb(184, 211, 96);
     border-radius: 13px;
     margin: 3px;
-    /* transition:  0.5s ease-in-out; 添加过渡效果 */
     animation: identifier3 4s;
 }
 @keyframes identifier1 {

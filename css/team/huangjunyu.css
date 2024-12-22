@@ -109,7 +109,7 @@ h3 {
 .swift-img img.active {
     display: block; 
 }
-button {
+.carousel button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

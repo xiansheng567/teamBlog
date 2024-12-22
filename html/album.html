@@ -3,10 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>相册</title>
+    <style></style>
+    
+    <link rel="stylesheet" href="../css/album.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/load.css">
+    <link rel="stylesheet" href="../css/ToTop.css">
 </head>
 <body>
-    <h1>Album</h1>
-    
+    <div class="load"  id="load">
+        <img src="../src/taichi.png">
+    </div>
+    <div class="navbar" id="navbar">
+        <nav>
+            <ul>
+                <li><a href="../html/show.html">首页</a></li>
+                <li><a href="album.html">相册</a></li>
+                <li><a href="./message.html">留言</a></li>
+                <li>
+                    <a href="./team.html">团队</a>
+                    <ul class="sub-menu">
+                        <li><a href="./team/huangjunyu.html">黄俊煜</a></li>
+                        <li><a href="./team/huanghaowen.html">黄皓文</a></li>
+                        <li><a href="./team/huangjiangyang.html">黄建扬</a></li>
+                        <li><a href="./team/lijia.html">李佳</a></li>
+                        <li><a href="./team/lidenghuo.html">李邓活</a></li>
+                        <li><a href="./team/huangyubin.html">黄宇斌</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="hidden" class="hidden">
+        <img src="../src/album/a.jpg" class="ah inactive" id="ah" >
+        <img src="../src/album/b.jpg" class="bh inactive" id="bh">
+        <img src="../src/album/c.jpg" class="ch inactive" id="ch">
+        <img src="../src/album/d.jpg" class="dh inactive" id="dh">
+        <img src="../src/album/e.jpg" class="eh inactive" id="eh">
+        <img src="../src/album/f.jpg" class="fh inactive" id="fh">
+        <img src="../src/album/g.jpg" class="gh inactive" id="gh">
+        <img src="../src/album/h.jpg" class="hh inactive" id="hh">
+        <img src="../src/album/k.jpg" class="ih inactive" id="ih">
+        <img src="../src/album/o.jpg" class="jh inactive" id="jh">
+        <img src="../src/album/l.jpg" class="kh inactive" id="kh">
+        <img src="../src/album/j.jpg" class="lh inactive" id="lh">
+        <img src="../src/album/p.png" class="mh inactive" id="mh">
+        <img src="../src/album/2.png" class="nh inactive" id="nh">
+        <img src="../src/album/屏幕截图 2024-08-24 173811.png" class="oh inactive" id="oh">
+    </div>
+    <button id="btn" class="btn">X</button>
+    <div class="cont animation2" id="cont">
+        <div class="cont1">
+            <img src="../src/album/a.jpg" class="ima" id="a">
+            <img src="../src/album/b.jpg" class="ima" id="b">
+            <img src="../src/album/c.jpg" class="ima" id="c">
+            <img src="../src/album/d.jpg" class="ima" id="d">
+            <img src="../src/album/e.jpg" class="ima" id="e">
+            <img src="../src/album/f.jpg" class="ima" id="f">
+            <img src="../src/album/g.jpg" class="ima" id="g">
+            <img src="../src/album/h.jpg" class="ima" id="h">
+        </div>
+        <button id="btn1" class="btn1 animation4" >></button>
+        <div class="cont1">
+            <img src="../src/album/k.jpg" class="ima" id="i" style="width: 310px;">
+            <img src="../src/album/o.jpg" class="ima" id="j" style="width: 310px;">
+            <img src="../src/album/l.jpg" class="ima" id="k" style="width: 310px;">
+            <img src="../src/album/j.jpg" class="ima" id="l" style="width: 340px;">
+            <img src="../src/album/p.png" class="ima" id="m" style="width: 340px;">
+            <img src="../src/album/2.png" class="ima" id="n" style="width: 340px;">
+            <img src="../src/album/屏幕截图 2024-08-24 173811.png" class="ima" id="o">
+            <!-- <img src="./h.jpg" class="ima" id="h"> -->
+        </div>
+    </div>
 </body>
+<script src="../js/album.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/ToTop.js"></script>
+<script src="../js/nav.js"></script>
 </html>

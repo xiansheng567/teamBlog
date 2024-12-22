@@ -71,7 +71,6 @@ main{
 .messageInput input{
     width: 380px;
     height: 30px;
-    margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #000000;
     border-radius: 5px;
@@ -86,12 +85,18 @@ main{
     cursor: pointer;
 }
 textarea{
-    width: 400px;
+    width: 380px;
     height: 200px;
     border-radius: 5px;
     border: 1px solid #000000;
     padding: 10px;
-    margin-bottom: 20px;
+    margin: 20px 0 ;
+}
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 .line{
     width: 100%;

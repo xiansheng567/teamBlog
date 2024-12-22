@@ -3,9 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>黄宇斌的个人页面</title>
+    <style>
+        .html,body{
+            background: url(../../src/team/huangyubin/微信图片_20241128201046.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            scroll-behavior: smooth
+        }
+        .top{
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #eee;
+            margin: 0 auto;
+            background-image: url("../../src/team/huangyubin/微信图片_20241222193207.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        .content {
+        display: flex;
+        position: absolute;
+        top: 300px;
+        left: 15%;
+        width: 70%;
+        height: auto;
+        flex-direction: column;
+        transition: all 0.5s ease-in-out;
+        align-items: center;
+        margin-bottom: 1000px;
+        padding: 10px;
+        counter-reset: chap;
+        line-height: 30px;
+        background-color: wheat;
+        }
+        .in{
+            height: 300px;
+            width: 400px;
+        }
+        h1{
+            margin-top: 20px;
+        }
+        table {
+        position: relative;
+        width: 100%;
+        border-collapse: collapse;
+        line-height: 2;
+        }
+        td{
+            border-bottom: 1px dotted #020202;
+        }
+        tr {
+        display: table-row;
+        vertical-align: inherit;
+        unicode-bidi: isolate;
+        border-color: inherit;
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            background-color: wheat;
+            display: table;
+        }
+        *{
+            margin: 0;
+        }
+        .cont{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .ima{
+            width: 310px;
+            padding: 18px;
+            margin: 30px;
+            background-color: #FFFFFF;
+            transition: 1s;
+        }
+        .ima:hover{
+            transform:rotate(0deg) scale(1.5) !important;
+        }
+        #a{
+            transform: rotate(12deg);
+        }
+        #b{
+            transform: rotate(-5deg);
+        }
+        #c{
+            transform: rotate(10deg);
+        }
+        #d{
+            transform: rotate(8deg);
+        }
+        #e{
+            transform: rotate(-10deg);
+        }
+        #f{
+            transform: rotate(-5deg);
+        }
+        #g{
+            transform: rotate(10deg);
+        }
+        #h{
+            transform: rotate(8deg);
+        }
+    </style>
+        <link rel="stylesheet" href="../../css/nav.css">
+        <link rel="stylesheet" href="../../css/load.css">
 </head>
 <body>
-    <h1>Huangyubin</h1>
+    <div class="load"  id="load">
+        <img src="../../src/taichi.png">
+    </div>
+    <div class="navbar" id="navbar">
+        <nav>
+            <ul>
+                <li><a href="../show.html">首页</a></li>
+                <li><a href="../album.html">相册</a></li>
+                <li><a href="../message.html">留言</a></li>
+                <li>
+                    <a href="../team.html">团队</a>
+                    <ul class="sub-menu">
+                        <li><a href="huangjunyu.html">黄俊煜</a></li>
+                        <li><a href="huanghaowen.html">黄皓文</a></li>
+                        <li><a href="huangjiangyang.html">黄建扬</a></li>
+                        <li><a href="lijia.html">李佳</a></li>
+                        <li><a href="lidenghuo.html">李邓活</a></li>
+                        <li><a href="huangyubin.html">黄宇斌</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="top"></div>
+        <div class="in">
+            <h1>介绍</h1>
+            <table class="tab">
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>姓名:</td>
+                                    <td>黄宇斌</td>
+                                </tr>
+                                <tr>
+                                    <td>身份:</td>
+                                    <td>人民群众</td>
+                                </tr>
+                                <tr>
+                                    <td>家乡:</td>
+                                    <td>广东/深圳</td>
+                                </tr>
+                                <tr>
+                                    <td>专业:</td>
+                                    <td>软件工程</td>
+                                </tr>
+                                <tr>
+                                    <td>邮箱:</td>
+                                    <td>huangyubin915@outlook.com</td>
+                                </tr>
+                                <tr>
+                                    <td>爱好:</td>
+                                    <td>游泳|羽毛球|听歌|爬山</td>
+                                </tr>
+                            </tbody>
+            </table>
+        </div>
+        <div class="cont">
+            <h1>我的图册</h1>
+            <img src="../../src/team/huangyubin/微信图片_20241128201001.jpg" class="ima" id="a">
+            <img src="../../src/team/huangyubin/微信图片_20241128201022.jpg" class="ima" id="b">
+            <img src="../../src/team/huangyubin/微信图片_20241128201028.jpg" class="ima" id="c">
+            <img src="../../src/team/huangyubin/微信图片_20241128201034.jpg" class="ima" id="d">
+            <img src="../../src/team/huangyubin/微信图片_20241128201041.jpg" class="ima" id="e">
+            <img src="../../src/team/huangyubin/微信图片_20241128201046.jpg" class="ima" id="f">
+            <img src="../../src/team/huangyubin/微信图片_20241128201116.jpg" class="ima" id="g">
+            <img src="../../src/team/huangyubin/微信图片_20241128201122.jpg" class="ima" id="h">
+        </div>
+    </div>
+    <script src="../../js/app.js"></script>
+    <script src="../../js/nav.js"></script>
 </body>
 </html>

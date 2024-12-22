@@ -8,6 +8,10 @@
     opacity: 0.8;
     font-size: 24px;
     font-weight: bold;
+    transition: transform 0.5s ease-in-out;
+}
+.move{
+    transform: translateY(-50px);
 }
 nav ul {
     list-style: none;
@@ -32,7 +36,7 @@ nav a {
 }
 
 .sub-menu {
-    display: none; /* 默认隐藏子菜单 */
+    display: none; 
     width: 220px;
     position: absolute;
     left: 0;
