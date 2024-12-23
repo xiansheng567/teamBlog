@@ -3,40 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>斜条纹背景效果</title>
+    <title>黄建扬</title>
     
     <link rel="stylesheet" href="../../css/team/huangjiangyang.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4789985_kz1pdwfvhue.css">
-    <link rel="stylesheet" href="../../css/nav.css">
+    <link rel="stylesheet" href="../css/loading.css">
     <link rel="stylesheet" href="../../css/load.css">
+    <link rel="stylesheet" href="../../css/nav.css">
+    <link rel="stylesheet" href="../../css/ToTop.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4789985_kz1pdwfvhue.css">
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const hiddenDiv = document.getElementById('hidden');
-    const button = document.getElementById('btn');
-    const contentDiv = document.getElementById('content');
-    button.addEventListener('click', () => {
-        if (hiddenDiv.classList.contains('active')) {
-            button.textContent = '>';
-            hiddenDiv.classList.remove('active'); // 移除 active 类以隐藏
-            hiddenDiv.classList.add('inactive'); // 添加 inactive 类
-            contentDiv.classList.add('inactive');
-            contentDiv.classList.remove('active');
-            button.classList.add("inactive");
-            button.classList.remove("active");
-        } else {
-            button.textContent = '<';
-            hiddenDiv.classList.add('active'); // 添加 active 类以显示
-            hiddenDiv.classList.remove('inactive'); // 移除 inactive 类
-            contentDiv.classList.add('active');
-            contentDiv.classList.remove('inactive');
-            button.classList.add("active");
-            button.classList.remove("inactive");
-        }
-    });
-});
-</script>>
+
 <body>
+
     <div class="load"  id="load">
         <img src="../../src/taichi.png">
     </div>
@@ -60,7 +38,6 @@
             </ul>
         </nav>
     </div>
-    
     <div class="hidden" id="hidden">
         <ul style="margin: 0; padding-top: 300px; list-style: none;">
 
@@ -68,6 +45,8 @@
             <li><a href="#title">介绍菜单</a></li>
             <li><a href="#percentage">技能掌握</a></li>
             <li><a href="#message">自我评价</a></li>
+            <li><a href="#photo">照片墙</a></li>
+            <li><a href="#comment">留言区</a></li>
             <li><a href="#footer">联系我</a></li>
         </ul>
     </div>
@@ -93,21 +72,21 @@
                     <p>黄建扬</p>
                     
                 </div>
-                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+                <div style="min-width: 230px; height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <span class="iconfont">&#xe661;&nbsp;:</span>
                     <p>广州新华大学</p>
                 </div>
-                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+                <div style="min-width: 230px; height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <span class="iconfont">&#xe6a1;&nbsp;:</span>
                     <p>软件工程专业</p>
                 </div>
-                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+                <div style="min-width: 230px; height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
             </div>
             <!-- 广州新华大学 计算机科学与技术学院 软件工程专业 -->
             <div class="card">
@@ -115,21 +94,21 @@
                     <span class="iconfont">&#xe60c;&nbsp;:</span>
                     <p>2023.09-2027.06 </p>
                 </div>
-                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto; min-width: 230px;"></div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <span class="iconfont">&#xe908;&nbsp;:</span>
                     <p>greenwork@gmail.com</p>
                 </div>
-                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+                <div style="min-width: 230px; height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <span class="iconfont">&#xe842;&nbsp;:</span>
                     <p>+86 138 1234 5678</p>
                 </div>
-                <div style="height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
+                <div style="min-width: 230px; height: 2px; background-color: black; width: 60%;margin: 0 auto;"></div>
             </div>
             <div class="Percentage" id="percentage">
                 <h3>编程语言能力</h3>
@@ -158,8 +137,8 @@
                     </div>
                 </div>
             </div>
-            <h3 style="margin-bottom: 20px;">自我评价</h3>
-            <div class="message" id="message">
+            <h3 style="margin-bottom: 20px;" id="message">自我评价</h3>
+            <div class="message" >
                
                 <p>我是一个热爱编程的学生，喜欢研究新技术，
                     擅长解决问题，有较强的逻辑思维能力，善于沟通，
@@ -169,7 +148,41 @@
                     amet consectetur adipisicing elit. Eaque, 
                     illum aperiam optio voluptatum omnis!</p>
             </div>
-        </div>
+            <h3 style="margin-top: 30px;" id="photo">照片墙</h3>
+            <div class="container">
+                <button id="prev-btn" class="pbtn"><</button>
+                <div id="image-carousel">
+                    <img src="../../src/team/huangjiangyang/2.png" alt="图片1" class="carousel-image active">
+                    <img src="../../src/team/huangjiangyang/j.jpg" alt="图片2" class="carousel-image">
+                    <img src="../../src/team/huangjiangyang/k.jpg" alt="图片3" class="carousel-image">
+                    <img src="../../src/team/huangjiangyang/o.jpg" alt="图片4" class="carousel-image">
+                    <img src="../../src/team/huangjiangyang/preview.jpg" alt="图片5" class="carousel-image">
+                </div>
+                <button id="next-btn" class="pbtn">></button>
+            </div>
+            <div class="comment-section" id="comment">
+                <h2 style="margin-bottom: 20px;">留言区</h2>
+                <div class="comment-box">
+                    <img src="../../src/team/huangjiangyang/touxiang.jpg" alt="头像">
+                    <input type="text" class="input-box" placeholder="请写下您的留言...">
+                </div>
+            
+                <div class="comment">
+                    <div class="user-info">蒙古ts</div>
+                    <div>冲浪偶遇小杯网页，拼尽全力也未能绷住</div>
+                    <div class="time">9小时前  点赞数  回复</div>
+                </div>
+            
+                <!-- <div class="comment">
+                    <div class="user-info">用户名【等级】</div>
+                    <div>评论内容...</div>
+                    <div class="time">5小时前  点赞数  回复</div>-->
+                    <div>
+                        <button class="backToTop" id="backToTop">
+                        </button>
+                    </div>
+            </div>
+        
         <div class="footer" id="footer">
             <div class="about">
                 <span class="iconfont" style="margin: 10px 10px; font-size: 50px!important;">&#xe600;</span>
@@ -181,10 +194,63 @@
             </p>
              <h3><p style="margin: 0;">邮箱: greenwork@gmail.com | 电话: 138 1234 5678</p></h3>
         </div>
-        <div style="height: 200px;"></div>
+        <div style="height: 300px;"></div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const hiddenDiv = document.getElementById('hidden');
+        const button = document.getElementById('btn');
+        const contentDiv = document.getElementById('content');
+        button.addEventListener('click', () => {
+            if (hiddenDiv.classList.contains('active')) {
+                button.textContent = '>';
+                hiddenDiv.classList.remove('active'); // 移除 active 类以隐藏
+                hiddenDiv.classList.add('inactive'); // 添加 inactive 类
+                contentDiv.classList.add('inactive');
+                contentDiv.classList.remove('active');
+                button.classList.add("inactive");
+                button.classList.remove("active");
+            } else {
+                button.textContent = '<';
+                hiddenDiv.classList.add('active'); // 添加 active 类以显示
+                hiddenDiv.classList.remove('inactive'); // 移除 inactive 类
+                contentDiv.classList.add('active');
+                contentDiv.classList.remove('inactive');
+                button.classList.add("active");
+                button.classList.remove("inactive");
+            }
+        });
+        
+        const images = document.querySelectorAll('.carousel-image');
+            let currentIndex = 0;
+        
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    if (i === index) {
+                        img.classList.add('active');
+                    } else {
+                        img.classList.remove('active');
+                    }
+                });
+            }
+        
+            document.getElementById('prev-btn').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+        
+            document.getElementById('next-btn').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+        
+            // 初始显示第一张图片
+            showImage(currentIndex);
+    });
+    </script>
     <script src="../../js/app.js"></script>
     <script src="../../js/nav.js"></script>
+    <script src="../../js/ToTop.js"></script>
 </body>
 <style>
     
