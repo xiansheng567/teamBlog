@@ -7,7 +7,7 @@ function isMobileBrowser() {
   // 调用函数检查是否是手机浏览器
   if (isMobileBrowser()) {
     // 如果是手机浏览器，则跳转到手机网站
-    window.location.href = '../html/detect.html';
+    window.location.href = '../teamBlog/html/detect.html';
   } else {
 
   }
