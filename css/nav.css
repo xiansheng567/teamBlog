@@ -34,7 +34,9 @@ nav a {
     text-decoration: none;
     color: #555;
 }
-
+nav ul li.active{
+    background-color: #ff3636;
+}
 .sub-menu {
     display: none; 
     width: 220px;
