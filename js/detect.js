@@ -6,6 +6,6 @@ function isMobileBrowser() {
   
   
   if (isMobileBrowser()) {
-    window.location.href = "../html/detect.html";
+    window.location.href = "../teamBlog/html/detect.html";
   } else {
   }
