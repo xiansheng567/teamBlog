@@ -21,7 +21,35 @@
         #backToTop:hover {
             background-color: rgb(101, 180, 186);
         }
-     
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 200px;
+            width:100px;
+            height: 35%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #f0f0f0;
+        }     
         /* 页面内容居中样式 */
         .container {
             display: flex;
@@ -34,7 +62,7 @@
         .beijing {
              background-color: rgb(250, 244, 248); /* 设置背景颜色为白色 */
              width: 600px;
-             height: 600px;
+             height: 850px;
              border-radius: 10px;
              box-shadow: 10px 10px 5px 1px #ecc0c9;
              }
@@ -83,7 +111,7 @@
         }
 
         .photo-album {
-            width: 1000px;
+            width: 600px;
             height: 300px;
             overflow: hidden;
         }
@@ -91,7 +119,7 @@
         .photo-album li {
             float: left;
             position: relative;
-            width: 200px;
+            width: 100px;
             height: 320px;
             transition: all .3s;
         }
@@ -102,11 +130,11 @@
         }
 
         .photo-album:hover li {
-            width: 64px;
+            width: 55px;
         }
 
         .photo-album li:hover {
-            width: 640px;
+            width:320px;
         }
 
         body {
@@ -117,7 +145,9 @@
         }
         
     </style>  
-   
+       <link rel="stylesheet" href="../../css/load.css">
+       <link rel="stylesheet" href="../../css/nav.css">
+       <link rel="stylesheet" href="../../css/ToTop.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790043_dzhaeylqu77.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790043_ny72vkey9md.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790043_6oabtx2gywc.css">
@@ -125,12 +155,9 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790043_5mgmk4l4vwq.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790043_2yrxsulkwqy.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790017_87xnww5jfx9.css">
-    <link rel="stylesheet" href="../../css/load.css">
-    <link rel="stylesheet" href="../../css/nav.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <br>
     <div class="load"  id="load">
         <img src="../../src/taichi.png">
     </div>
@@ -139,11 +166,11 @@
             <ul>
                 <li><a href="../show.html">首页</a></li>
                 <li><a href="../album.html">相册</a></li>
-                <li><a href="../message.html">留言</a></li>
+                <li><a href="../musicBox.html">音乐</a></li>
                 <li>
                     <a href="../team.html">团队</a>
                     <ul class="sub-menu">
-                        <li><a href="huangjunyu.html">黄俊煜</a></li>
+                        <li ><a href="huangjunyu.html">黄俊煜</a></li>
                         <li><a href="huanghaowen.html">黄皓文</a></li>
                         <li><a href="huangjiangyang.html">黄建扬</a></li>
                         <li class="active"><a href="lijia.html">李佳</a></li>
@@ -154,7 +181,18 @@
             </ul>
         </nav>
     </div>
-    <div class="container" style="margin-top: 40px;">
+    <div class="sidebar">
+        <ul>
+            <li><a href="#introduction">个人介绍</a></li>
+            <li><a href="#education">教育背景</a></li>
+            <li><a href="#skills">专业技能</a></li>
+            <li><a href="#contact">联系方式</a></li>
+            <li><a href="#photo">照片展示</a></li>
+            <li><a href="lijia_music.html">其他</a></li>
+        </ul>
+    </div>
+    <br>
+    <div class="container" style="margin-top: 50px;">
         <!-- 个人介绍 -->
         <div class="box">
             <img src="../../src/team/ljia/lj.jpg" alt="头像">
@@ -162,27 +200,34 @@
         <br>
 
         <div class="beijing">
-        <h1>个人介绍</h1>   
+        <h1 id="introduction">个人介绍</h1>   
         <p class="iconfont icon-caihong">姓名：李佳</p> 
         <p class="iconfont icon-Cake1">学历：本科在读</p>
         <p class="iconfont icon-Headset">爱好：听音乐，唱歌</p>
         <p class="iconfont icon-fangche">家乡：四川</p>  
 
+        <h1  id="education">教育背景</h1>
+        <p class="iconfont">高中：广东省佛山市顺德区桂洲中学</p>
+        <p class="iconfont">大学：广东省东莞市麻涌镇广州新华学院</p>
+
         <!-- 专业技能 -->
-        <h1>专业技能</h1>
-        <p class="iconfont">1.luckin coffee品鉴师</p>
-        <p class="iconfont">2.诺贝尔文学奖读者</p>
-        <p class="iconfont">3.各大顶级购物平台的资深买手</p>
+        <h1  id="skills">专业技能</h1>
+        <p class="iconfont">1.熟练java，C++等编程语言</p>
+        <p class="iconfont">2.了解软件开发的各个阶段，包括需求分析，设计，编程，测试，部署和维护等</p>
+        <p class="iconfont">3.掌握基本算法和数据结构，如排序算法，搜索算法，树，图等</p>
+        <p class="iconfont">4.了解数据库的基本概念和技能，包括SQL语言，数据库设计，事务处理等</p>
+        <p class="iconfont">6.能够编写清晰的技术文档，包括需求文档，设计文档，用户手册等</p>
+
 
         <!-- 联系方式 -->
-        <h1>联系方式</h1>
+        <h1 id="contact">联系方式</h1>
         <p class="iconfont icon-dianhua">电话:13433204699</p>
         <p class="iconfont icon-24gl-mailboxFull">邮箱:2947396182@qq.com</p>
         <p class="iconfont icon-weixin">微信:Roy240520</p>
       </div>
 
         <!-- 照片展示 -->
-        <h5>照片展示</h5>
+        <h5 id="photo">照片展示</h5>
         <ul class="photo-album">
             <li>
             <img src="../../src/team/ljia/1.jpg" alt="">
@@ -200,6 +245,9 @@
             </li>
             <li> 
                 <img src="../../src/team/ljia/18.jpg" alt=""> 
+            </li>
+            <li> 
+                <img src="../../src/team/ljia/20.jpg" alt=""> 
             </li>
         </ul>
         <button id="backToTop" title="返回顶部">↑ 返回顶部</button>
@@ -224,7 +272,7 @@
             });
         });
     </script>
-        <script src="../../js/nav.js"></script>
         <script src="../../js/app.js"></script>
+        <script src="../../js/nav.js"></script>
 </body>
 </html>

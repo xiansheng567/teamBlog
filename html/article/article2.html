@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/article/article.css">
+    <title>Queue</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Queue</h1>
+        <div class="header-tag">
+            <div class="date">📅 2023/8/11</div>
+            <div class="bookmark">🔖 OI</div>
+            <div class="tags">
+                <span class="tag">C/C++</span>
+                <span class="tag tag-secondary">C++20</span>
+                <span class="tag tag-secondary">数据结构</span>
+            </div>
+        </div>
+        <h2>1. 题解</h2>
+        <p>我们可以用 <code>list</code> 模拟队列，在更新队列的同时维护一个 <code>unordered_map</code> 记录元素出现的位置。</p>
+        <p>为了操作，我们定义 A1 表示排队列，A2 表示游玩队列。</p>
+        <p>对于操作 <code>start</code>，将 A2 的元素放入 A1 的尾部，然后将 A1 队头的元素放入 A2。如果 A1 为头则输出 <code>Error</code>。</p>
+
+        <pre>
+            while (!A2.empty()) {
+                string x = A2.front();
+                A2.pop_front();
+                S2.erase(x);
+                A1.push_back(x);
+                S1[--A1.end()];
+            }
+
+            if (A1.empty()) {
+                cout << "Error\n";
+                continue;
+            }
+
+            int cnt = 0;
+            while (!A1.empty() && cnt < 2) {
+                string x = A1.front();
+                A1.pop_front();
+                S2.erase(x);
+                A2.push_back(x);
+                S2[x] = ++cnt;
+                cout << x << ' ';
+            }
+            cout << '\n';
+            </pre>
+            
+            <p>对于操作 arrive，如果 x 在 A1 或 A2 中则输出 Error，否则将 x 放到 A1 的队尾，并输出 OK。</p>
+            <p>对于操作 <code>arrive</code>，如果 <code>x</code> 在 S1 或 S2 中则输出 <code>Error</code>，否则将 <code>x</code> 放到 A1 的队尾，并输出 <code>OK</code>。</p>
+
+                <pre>
+            if (S1.contains(x) || S2.contains(x)) {
+                cout << "Error\n";
+                continue;
+            }
+            A1.push_back(x);
+            S1[x] = --A1.end();
+            cout << "OK\n";
+                </pre>
+
+                <p>对于操作 <code>leave</code>，如果 <code>x</code> 不在 A1 中则输出 <code>Error</code>，否则根据记录的位置将 <code>x</code> 在 A1 删除，并输出 <code>OK</code>。</p>
+
+                <pre>
+            if (!S1.contains(x)) {
+                cout << "Error\n";
+                continue;
+            }
+            A1.erase(S1[x]);
+            S1.erase(x);
+            cout << "OK\n";
+                </pre>
+                <h2>2. 代码</h2>
+
+                <pre>
+            #include iostream
+            #include list
+            #include unordered_map
+            using namespace std;
+
+            int main() {
+                ios::sync_with_stdio(false);
+                cin.tie(nullptr);
+                
+                int n;
+                string op;
+                list string A1, A2;
+                unordered_map string, list string ::iterator> S1, S2;
+
+                cin >> n;
+                while (n--) {
+                    cin >> op;
+                    if (op == "start") {
+                        while (!A2.empty()) {
+                            string x = A2.front();
+                            A2.pop_front();
+                            S2.erase(x);
+                            A1.push_back(x);
+                            S1[x] = --A1.end();
+                        }
+
+                        if (A1.empty()) {
+                            cout << "Error\n";
+                            continue;
+                        }
+
+                        int cnt = 0;
+                        while (!A1.empty() && cnt < 2) {
+                            string x = A1.front();
+                            A1.pop_front();
+                            S2.erase(x);
+                            A2.push_back(x);
+                            S2[x] = ++cnt;
+                            cout << x << ' ';
+                        }
+                        cout << '\n';
+                    }
+                }
+                </pre>
+    </div>
+</body>
+</html>

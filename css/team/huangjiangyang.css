@@ -13,6 +13,10 @@ body, html {
     margin: 0;
     padding: 0;
 }
+h3{
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
 div.hidden li {
     float: left;
     list-style: none;
@@ -222,7 +226,7 @@ div.hidden li a:hover {
     width: 120px;
     height: 120px;
     border-radius: 30px;
-    margin-top: 10px;
+    margin-top: 50px;
     border: #e6e6e6 solid 1px;
     z-index: 1;
     box-shadow: 0px 0px 10px #333;
@@ -232,7 +236,7 @@ div.hidden li a:hover {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 1500px;
+    /* height: 1500px; */
     background-color: #c9c8c8;
     overflow: hidden;
 }
@@ -297,7 +301,7 @@ div.hidden li a:hover {
     height: 20px;
     width: 100%;
     margin: 0px auto;
-    border: aqua 2px solid;
+    border: rgb(41, 41, 41) 2px solid;
     overflow: hidden;
     border-radius: 15px;
 }
@@ -306,7 +310,7 @@ div.hidden li a:hover {
     height: 20px;
     width: 100%;
     margin: 0px auto;
-    border: rgb(135, 65, 85) 2px solid;
+    border: rgb(41, 41, 41) 2px solid;
     overflow: hidden;
     border-radius: 15px;
 }
@@ -315,7 +319,7 @@ div.hidden li a:hover {
     height: 20px;
     width: 100%;
     margin: 0px auto;
-    border: rgb(168, 56, 91) 2px solid;
+    border: rgb(41, 41, 41) 2px solid;
     overflow: hidden;
     border-radius: 15px;
 }
@@ -324,14 +328,15 @@ div.hidden li a:hover {
     height: 20px;
     width: 100%;
     margin: 0px auto;
-    border: rgb(112, 116, 96) 2px solid;
+    border: rgb(41, 41, 41) 2px solid;
     overflow: hidden;
     border-radius: 15px;
 }
 .progress-bar01 {
     height: 14px;
     width: 45%; /* 初始宽度为0 */
-    background-color: aqua;
+    background-color: rgb(41, 41, 41);
+    color: white;
     border-radius: 13px;
     margin: 3px;
     font-size: 14px;
@@ -342,7 +347,8 @@ div.hidden li a:hover {
 .progress-bar02 {
     height: 14px;
     width: 40%; /* 初始宽度为0 */
-    background-color: rgb(135, 65, 85);
+    background-color: rgb(41, 41, 41);
+    color: white;
     border-radius: 13px;
     margin: 3px;
     font-size: 14px;
@@ -352,17 +358,20 @@ div.hidden li a:hover {
 .progress-bar03 {
     height: 14px;
     width: 50%; /* 初始宽度为0 */
-    background-color: rgb(168, 56, 91);
+    background-color: rgb(41, 41, 41);
+    color: white;
     border-radius: 13px;
     margin: 3px;
     font-size: 14px;
+    
     /* transition:  0.5s ease-in-out; 添加过渡效果 */
     animation: identifier3 4s;
 }
 .progress-bar04 {
     height: 14px;
     width: 15%; /* 初始宽度为0 */
-    background-color: rgb(95, 100, 79);
+    background-color: rgb(41, 41, 41);
+    color: white;
     border-radius: 13px;
     margin: 3px;
     font-size: 14px;
@@ -415,12 +424,11 @@ div.hidden li a:hover {
     margin-bottom: 20px;
 }
 /* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
-/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 @font-face {
     font-family: 'iconfont';  /* Project id 4789985 */
-    src: url('//at.alicdn.com/t/c/font_4789985_f1vwg3d7xsv.woff2?t=1734799485529') format('woff2'),
-         url('//at.alicdn.com/t/c/font_4789985_f1vwg3d7xsv.woff?t=1734799485529') format('woff'),
-         url('//at.alicdn.com/t/c/font_4789985_f1vwg3d7xsv.ttf?t=1734799485529') format('truetype');
+    src: url('//at.alicdn.com/t/c/font_4789985_hpax45yd7zi.woff2?t=1735291075081') format('woff2'),
+         url('//at.alicdn.com/t/c/font_4789985_hpax45yd7zi.woff?t=1735291075081') format('woff'),
+         url('//at.alicdn.com/t/c/font_4789985_hpax45yd7zi.ttf?t=1735291075081') format('truetype');
   }
 .iconfont{
     font-family: "iconfont" ;
@@ -490,23 +498,42 @@ div.hidden li a:hover {
     border-radius: 5px;
     padding: 4px;
     width: 80%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     height: 40px;
     background-color: #f2f2f2;
+    font-size: 20px;
+    font-weight: bold;
 }
 .comment {
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
+    border-bottom: 1px solid #232323;
+    padding: 5px 0;
 }
 .comment-box{
     display: flex;
     flex-direction: row;
 }
-.comment-box >img{
+.comment-box img{
     width: 50px;
-    height: 50px;
+   height: 50px;
     border-radius: 50%;
     margin-right: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.submit-btn{
+    background-color: #373737;
+    color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 10px;
+    width: 10%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
 }
 .user-info {
     font-weight: bold;
@@ -519,6 +546,7 @@ div.hidden li a:hover {
     margin-top: 5px;
     font-size: 12px;
 }
+
 /* .mask {
     
     display: flex;
@@ -531,3 +559,33 @@ div.hidden li a:hover {
     background-attachment: fixed;
     } */
     /*linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%) , */
+    .backToTop {
+        background-image: url("../../src/team/huangjiangyang/太极黑.png");
+        background-size: cover;
+        position: fixed;
+        bottom: 180px;
+        right: 100px;
+        display: none; 
+        border: rgb(75, 75, 75) solid 2px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 99;
+        animation: xuanzhuan infinite 10s;
+        overflow: hidden;
+    }
+    @keyframes xuanzhuan {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    .backToTop:hover {
+        background-image: url("../../src/team/huangjiangyang/置顶_黑.png");
+        animation: none;
+        z-index: 99;
+    }

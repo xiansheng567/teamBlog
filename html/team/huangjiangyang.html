@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/loading.css">
     <link rel="stylesheet" href="../../css/load.css">
     <link rel="stylesheet" href="../../css/nav.css">
-    <link rel="stylesheet" href="../../css/ToTop.css">
+    <!-- <link rel="stylesheet" href="../../css/ToTop.css"> -->
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4789985_kz1pdwfvhue.css">
 </head>
 
@@ -23,7 +23,7 @@
             <ul>
                 <li><a href="../show.html">首页</a></li>
                 <li><a href="../album.html">相册</a></li>
-                <li><a href="../message.html">留言</a></li>
+                <li><a href="../musicBox.html">音乐</a></li>
                 <li>
                     <a href="../team.html">团队</a>
                     <ul class="sub-menu">
@@ -64,7 +64,7 @@
             </div> -->
         </div>
         <div class="main">
-            <h3 id="title">介绍菜单</h3>
+            <h3 id="title" >介绍菜单</h3>
             <div class="card">
                 
                 <div class="card-content">
@@ -148,7 +148,7 @@
                     amet consectetur adipisicing elit. Eaque, 
                     illum aperiam optio voluptatum omnis!</p>
             </div>
-            <h3 style="margin-top: 30px;" id="photo">照片墙</h3>
+            <h3  id="photo">照片墙</h3>
             <div class="container">
                 <button id="prev-btn" class="pbtn"><</button>
                 <div id="image-carousel">
@@ -160,11 +160,14 @@
                 </div>
                 <button id="next-btn" class="pbtn">></button>
             </div>
-            <div class="comment-section" id="comment">
+            <div class="comment-section" style="margin-bottom: 50px;" id="comment">
                 <h2 style="margin-bottom: 20px;">留言区</h2>
                 <div class="comment-box">
                     <img src="../../src/team/huangjiangyang/touxiang.jpg" alt="头像">
-                    <input type="text" class="input-box" placeholder="请写下您的留言...">
+                    <form action="https://www.baidu.com/">
+                        <input name="comment-input" type="text" class="input-box" placeholder="请写下您的留言...">
+                        <input type="submit" value="提交" class="submit-btn">
+                    </form>
                 </div>
             
                 <div class="comment">

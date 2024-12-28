@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>贪吃蛇游戏</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(215, 243, 250);
+    background-image: url("../src/image.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #startScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #gameCanvas {
+    position: relative;
+    top: -30px;
+    background-color: white;
+    border: 1px solid black;
+    display: none; /* 默认隐藏游戏画布 */
+  }
+  #startButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+<link rel="stylesheet" href="../css/load.css">
+<link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+  <div class="load"  id="load">
+    <img src="../src/taichi.png">
+</div>
+<div class="navbar" id="navbar">
+    <nav>
+        <ul>
+            <li class="active"><a href="show.html">首页</a></li>
+            <li><a href="album.html">相册</a></li>
+            <li><a href="musicBox.html">音乐</a></li>
+            <li>
+                <a href="team.html">团队</a>
+                <ul class="sub-menu">
+                    <li><a href="./team/huangjunyu.html">黄俊煜</a></li>
+                    <li><a href="./team/huanghaowen.html">黄皓文</a></li>
+                    <li><a href="./team/huangjiangyang.html">黄建扬</a></li>
+                    <li><a href="./team/lijia.html">李佳</a></li>
+                    <li><a href="./team/lidenghuo.html">李邓活</a></li>
+                    <li><a href="./team/huangyubin.html">黄宇斌</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div id="startScreen">
+  <h1>贪吃蛇游戏</h1>
+  <button id="startButton">开始游戏</button>
+</div>
+<canvas id="gameCanvas" width="550" height="430"></canvas>
+<script src="../js/app.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+let snake = [{x: 200, y: 200}];
+let dx = 0; // 修改默认方向为停止
+let dy = 0;
+let food = {x: 300, y: 300};
+const gridSize = 10;
+const tileCount = canvas.width / gridSize;
+let gameInterval;
+
+function getRandomFoodPosition() {
+  return {
+    x: Math.floor(Math.random() * tileCount) * gridSize,
+    y: Math.floor(Math.random() * tileCount) * gridSize
+  };
+}
+
+function drawRect(x, y, color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x, y, gridSize, gridSize);
+}
+
+function drawSnake() {
+  snake.forEach(part => drawRect(part.x, part.y, 'green'));
+}
+
+function drawFood() {
+  drawRect(food.x, food.y, 'red');
+}
+
+function advanceSnake() {
+  const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+  snake.unshift(head);
+  
+  const didEatFood = snake[0].x === food.x && snake[0].y === food.y;
+  if (didEatFood) {
+    food = getRandomFoodPosition();
+  } else {
+    snake.pop();
+  }
+}
+
+function checkCollision() {
+  for (let i = 4; i < snake.length; i++) {
+    if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
+  }
+  const hitLeftWall = snake[0].x < 0;
+  const hitRightWall = snake[0].x > canvas.width - gridSize;
+  const hitToptWall = snake[0].y < 0;
+  const hitBottomWall = snake[0].y > canvas.height - gridSize;
+  
+  return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
+}
+
+function gameLoop() {
+  if (checkCollision()) {
+    const restart = confirm("你输了！是否要重新开始？");
+    if (restart) {
+      // 重置游戏状态
+      snake = [{x: 200, y: 200}];
+      dx = 10;
+      dy = 0;
+      food = getRandomFoodPosition();
+      gameInterval = setInterval(gameLoop, 300); // 重新启动游戏循环
+    } else {
+      // 如果用户不想重新开始，可以在这里停止游戏循环
+      clearInterval(gameInterval);
+    }
+    return;
+  }
+  
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawFood();
+  advanceSnake();
+  drawSnake();
+}
+
+function changeDirection(event) {
+  const keyPressed = event.keyCode;
+  const goingUp = dy === -gridSize;
+  const goingDown = dy === gridSize;
+  const goingRight = dx === gridSize;
+  const goingLeft = dx === -gridSize;
+  
+  if (keyPressed === 37 && !goingRight) {
+    dx = -gridSize;
+    dy = 0;
+  }
+  
+  if (keyPressed === 38 && !goingDown) {
+    dx = 0;
+    dy = -gridSize;
+  }
+  
+  if (keyPressed === 39 && !goingLeft) {
+    dx = gridSize;
+    dy = 0;
+  }
+  
+  if (keyPressed === 40 && !goingUp) {
+    dx = 0;
+    dy = gridSize;
+  }
+}
+
+document.addEventListener('keydown', changeDirection);
+
+document.getElementById('startButton').addEventListener('click', function() {
+  document.getElementById('startScreen').style.display = 'none'; // 隐藏开始界面
+  alert("通过上下左右 进行移动")
+  canvas.style.display = 'block'; // 显示游戏画布
+  gameInterval = setInterval(gameLoop, 300); // 启动游戏循环
+});
+</script>
+</body>
+</html>

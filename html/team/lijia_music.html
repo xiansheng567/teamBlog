@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>音乐盒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-image: url('../../src/team/ljia/19.jpg');
+      background-size: cover; /* 使背景图片覆盖整个页面 */
+      background-position: center center; /* 使背景图片居中显示 */
+      }
+
+    #myAudio {
+      display: none;
+    }
+
+    .player {
+      position: relative;
+    }
+
+    .control {
+      width: 300px;
+      height: 80px;
+      background: #fff;
+      border-radius: 15px;
+      position: relative;
+      box-shadow: 0 20px 20px 5px rgba(132, 132, 132, 0.2);
+    }
+
+    .alarm {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      background: #000;
+      transform: scale(1);
+      transition: all 0.5s ease;
+    }
+
+    .alarm::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      border-radius: 50%;
+      background: url("../../src/team/ljia/img/bg.jpg") no-repeat center center;
+      background-size: 100%;
+    }
+
+    /* 音响 */
+    .control.active .alarm::before {
+      animation: rotateF 3s infinite linear;
+    }
+
+    @keyframes rotateF {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .buts {
+      display: flex;
+      justify-content: flex-end;
+      height: 80px;
+      padding: 0 15px;
+    }
+
+    .prev,
+    .play,
+    .next {
+      width: 55px;
+      height: auto;
+      border-radius: 10px;
+      background: #000;
+      cursor: pointer;
+    }
+
+    .prev {
+      background: url("../../src/team/ljia/img/prev.svg") no-repeat center center;
+      background-size: 20px;
+    }
+
+    .play {
+      background: url(../../src/team/ljia/img/play2.svg) no-repeat center center;
+      background-size: 20px;
+    }
+
+    .next {
+      background: url(../../src/team/ljia/img/next.svg) no-repeat center center;
+      background-size: 20px;
+    }
+
+    /* 播放时 */
+    .control.active .play {
+      background: url(../../src/team/ljia/img/play.svg) no-repeat center center;
+      background-size: 20px;
+    }
+
+    /* 隐藏 */
+    .info {
+      position: absolute;
+      height: 60px;
+      top: -60px;
+      left: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 5px 15px 5px 110px;
+      border-radius: 15px;
+    }
+
+    /* 歌名 */
+    .song {
+      color: #222;
+      font-size: 16px;
+      margin-bottom: 14px;
+      line-height: 16px;
+    }
+
+    /* 歌手 */
+    .name {
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* 播放进度 */
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      position: relative;
+      background-color: #d3d3d3;
+      border-radius: 6px;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 6px;
+      background: transparent;
+      outline: none;
+      z-index: 2;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 14px;
+      width: 14px;
+      background: #ddd;
+      border-radius: 50%;
+      cursor: pointer;
+
+    }
+
+    .progress {
+      height: 6px;
+      width: 0%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(149, 224, 203, 0.766);
+      border-radius: 6px;
+    }
+
+    /* 歌词 */
+    .container {
+      width: 100%;
+      height: 398px;
+      overflow: hidden;
+    }
+
+    .lrc-box {
+      width: 100%;
+      list-style: none;
+      transition: 0.5s;
+      text-align: center;
+      transition: all 2s ease-in;
+    }
+
+    .lrc-box li {
+      height: 30px;
+      line-height: 30px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    .lrc-box li.on {
+      color: #444;
+      font-weight: 600;
+      transform: scale(1.1);
+    }
+    .sidebar ul {
+            list-style: none;
+            padding: 0;
+    }
+    .sidebar {
+            position: fixed;
+            left: 0;
+            top: 200px;
+            width:100px;
+            height: 8%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            overflow-y: auto;
+    }
+    .sidebar ul li a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+            background-color: #f0f0f0;
+    }
+  </style>
+    <link rel="stylesheet" href="../../css/load.css">
+    <link rel="stylesheet" href="../../css/nav.css">
+</head>
+
+<body>
+  <div class="load"  id="load">
+    <img src="../../src/taichi.png">
+</div>
+<div class="navbar" id="navbar">
+    <nav>
+        <ul>
+            <li><a href="../show.html">首页</a></li>
+            <li><a href="../album.html">相册</a></li>
+            <li><a href="../musicBox.html">音乐</a></li>
+            <li>
+                <a href="../team.html">团队</a>
+                <ul class="sub-menu">
+                    <li class="active"><a href="huangjunyu.html">黄俊煜</a></li>
+                    <li><a href="huanghaowen.html">黄皓文</a></li>
+                    <li><a href="huangjiangyang.html">黄建扬</a></li>
+                    <li class="active"><a href="lijia.html">李佳</a></li>
+                    <li><a href="lidenghuo.html">李邓活</a></li>
+                    <li><a href="huangyubin.html">黄宇斌</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+  <div class="sidebar">
+    <ul>
+        <li><a href="team_lijia1.html">个人介绍</a></li>
+    </ul>
+</div>
+  <!-- 播放器 -->
+  <audio id="myAudio">
+    <source
+      src="../../src/team/ljia/img/001.mp3"
+      type="audio/mpeg">
+  </audio>
+
+  <!-- 歌词 -->
+  <div class="container">
+    <ul class="lrc-box"></ul>
+  </div>
+  <!-- 歌词 end -->
+
+  <div class="player">
+
+    <!-- 播放信息 -->
+    <div class="info" id="info">
+      <div class="song">多余的解释 <span class="name"> 许嵩</span></div>
+
+      <div class="progress-bar">
+        <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+        <div class="progress" id="progress"></div>
+      </div>
+
+    </div>
+    <!-- 播放信息 end-->
+
+    <!-- 控件 -->
+    <div class="control" id="control">
+      <div class="alarm"></div>
+      <div class="buts">
+        <div class="prev"></div>
+        <div id="play" class="play"></div>
+        <div class="next"></div>
+      </div>
+    </div>
+    <!-- 控件 end-->
+
+  </div>
+  
+  <!-- 引入歌词 -->
+  <script src="../../js/song.js"></script>
+  <script>
+    //播放按钮
+    let playBut = document.getElementById("play");
+    //播放器
+    let myAudio = document.getElementById("myAudio");
+    //控件
+    let controlDom = document.getElementById('control');
+
+    playBut.addEventListener("click", playF);
+    //点击事件
+    function playF() {
+      //判断当前是否在播放
+      let flag = Array.from(controlDom.classList).some(function (item) {
+        return item == "active";
+      });
+      if (flag) {
+        //播放中点击暂停
+        controlDom.classList.remove('active');
+        myAudio.pause();
+      } else {
+        controlDom.classList.add('active');
+        myAudio.play();
+      }
+    }
+
+    // 获取时间和歌词
+    function getLrcObj(str) {
+      const arr = str.split(']');
+      return {
+        time: formateTime(arr[0].substring(1)),
+        word: arr[1],
+      };
+    }
+    // 把时间转化成秒
+    function formateTime(str) {
+      const arr = str.split(':');
+      return +arr[0] * 60 + +arr[1];
+    }
+
+    function getLrc(str) {
+      const strArr = str.split('\n');
+      let arr = [];
+      for (let i = 0; i < strArr.length; i++) {
+        let obj = getLrcObj(strArr[i]);
+        arr.push(obj);
+      }
+      return arr;
+    }
+
+    //显示歌词
+    let lrcArr = [];
+    function showLrc() {
+      const fragment = document.createDocumentFragment();
+      lrcArr = getLrc(lrc);
+      for (let i = 0; i < lrcArr.length; i++) {
+        li = document.createElement('li');
+        li.textContent = lrcArr[i].word;//歌词
+        fragment.appendChild(li);
+      }
+      document.querySelector('.lrc-box').appendChild(fragment);
+    }
+
+    showLrc();
+
+
+    // 获取当前播放的歌词下标
+    function getArrIndex() {
+      const currentTime = myAudio.currentTime;
+      let index = lrcArr.findIndex(function (item) {
+        return item.time > currentTime
+      })
+      if (index == -1) {
+        return lrcArr.length - 1;
+      }
+      return index - 1;
+    }
+
+    //滚动区域高度
+    let ulDom = document.querySelector(".container ul");
+    const containerH = document.querySelector(".container").clientHeight;
+    //最大移动高度
+    const maxOffset = ulDom.clientHeight - containerH;
+    //实时获取歌曲播放进度
+    function setLrc() {
+
+      setProgress();//设置进度条
+      const nowIndex = getArrIndex();
+      const allLiHeight = nowIndex * 30;
+      const half = containerH / 2; // 容器的一半高度
+      // 移动多少
+      let offset = allLiHeight + 30 / 2 - half;
+      if (offset < 0) {
+        offset = 0;
+      }
+      if (offset > maxOffset) {
+        offset = maxOffset;
+      }
+
+      //滚动歌词
+      console.log("offset);" + offset);
+  console.log("allLiHeight;"+ allLiHeight);
+  console.log("half;" +half);
+  console.log("max;" +maxOffset);
+      ulDom.style.transform = `translateY(-${offset}px)`;
+
+      let li = document.querySelector('.on');
+      if (li) {
+        li.classList.remove('on');
+      }
+      //设置 当前歌词高亮
+      li = ulDom.children[nowIndex];
+
+      if (li) {
+        li.classList.add('on');
+      }
+    }
+    // 监听播放进度
+    myAudio.addEventListener('timeupdate', setLrc);
+
+
+    // 设置进度条
+    const slider = document.getElementById('myRange');
+    const progress = document.getElementById('progress');
+
+    //进度提拖动
+    slider.oninput = function () {
+      progress.style.width = `${this.value}%`;
+      // 获取音乐总时长，单位是秒
+      let duration = myAudio.duration;
+      //修改当前播放时间
+      myAudio.currentTime = this.value / 100 * duration;
+    }
+
+    //设置进度条
+    function setProgress() {
+      let duration = myAudio.duration;
+      const currentTime = myAudio.currentTime;
+      let val = parseInt(currentTime / duration * 100);
+      //设置进度提值 
+      slider.value = val;
+      progress.style.width = `${val}%`;
+    }
+
+  </script>
+          <script src="../../js/app.js"></script>
+          <script src="../../js/nav.js"></script>
+</body>
+
+</html>

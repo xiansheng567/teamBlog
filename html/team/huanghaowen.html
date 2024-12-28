@@ -8,8 +8,17 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790011_eqfjhhhat7n.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790011_a9uk3f5a8er.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4790011_as4br7rz6uh.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4796821_n4x1pjw15n.css">
     <style>
 
+body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
 .form-group {
   margin-bottom: 15px;
 }
@@ -226,7 +235,232 @@ button:hover {
         transform: translateY(50px);
     }
 }
+.kuangjia{
+    width: 150px;
+    height: 400px;
+    background-color: #555;
+    position: fixed;
+    left: -150px;
+    border-radius: 12px 0 0 12px;
+    overflow: hidden;
+}
+*li{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+.kuangjia li{
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
 
+}
+.kuangjia a:hover{
+    background-color: #007BFF;
+}
+.kuangjia a{
+    color: #f8f2f2;
+    display: block;
+}
+#cb{
+    display: none;
+}
+#cb:checked ~.kuangjia{
+    left: 0px;
+
+}
+.kuangjia ul{
+    list-style-type: none; /* 无序列表没有项目符号 */
+    padding: 0; 
+}
+label{
+    width: 40px;
+    height: 40px;
+    background: #007BFF;
+    border-radius: 12px;
+    display: inline-block;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    line-height: 40px;
+    position: fixed;
+    left: 150px;
+    left: 0;
+    cursor: pointer;
+}
+
+.experience {
+background-color: white;
+            width: 50%;
+            margin: 30px 25%;
+            padding: 20px;
+            border: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .experience h6 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .experience ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .experience-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .experience-photo {
+            max-width: calc(33% - 10px);
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+.award{
+    display: flex;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* 最大宽度 */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.43);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+input,
+textarea {
+    border: none;
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 18px; /* 字体大小调整 */
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%; /* 宽度调整 */
+}
+
+#username {
+    height: 60px; /* 高度调整 */
+}
+
+#message {
+    height: 150px; /* 高度调整 */
+}
+.messagesBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: blue;
+}
+.messages h1{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 40px;
+    font-size: 48px; /* 字体大小调整 */
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 5px; /* 字距调整 */
+}
+
+#submitBtn {
+    position: relative; /* 调整为相对定位 */
+    background-image: linear-gradient(90deg, #e0c3fc 0%, #bec5fc 100%);
+    border: none;
+    font-size: 18px; /* 字体大小调整 */
+    width: 180px; /* 宽度调整 */
+    height: 50px; /* 高度调整 */
+    border-radius: 25px; /* 圆角调整 */
+    margin-top: 20px; /* 上边距调整 */
+}
+
+#messageBoard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* 最大宽度 */
+    margin-top: 50px; /* 上边距调整 */
+}
+
+.message {
+    width: 100%;
+    padding: 20px;
+    opacity: 0;
+    animation: messagefadein 0.5s ease forwards;
+    background-image: linear-gradient(90deg, #8ec5fc 0%, #e0c3fc 100%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-shadow: 0px 0px 20px #ffffff;
+    margin-bottom: 20px; /* 留言间距调整 */
+}
+
+@keyframes messagefadein {
+    to {
+        opacity: 1;
+    }
+}
+
+.message-info {
+    display: flex;
+    align-items: center;
+    font-size: 24px; /* 字体大小调整 */
+    margin-bottom: 10px; /* 下边距调整 */
+}
+
+.info img {
+    width: 80px; /* 图片宽度调整 */
+    height: 80px; /* 图片高度调整 */
+    border-radius: 50%;
+    border: 4px solid #fff; /* 边框调整 */
+}
+
+strong {
+    margin-left: 20px; /* 与图片间距调整 */
+    font-size: 24px; /* 字体大小调整 */
+}
+
+.message-info span {
+    font-size: 18px; /* 字体大小调整 */
+}
+
+.content {
+    font-size: 18px; /* 字体大小调整 */
+    margin: 20px;
+    width: 95%;
+}
     </style>
 <link rel="stylesheet" href="../../css/nav.css"></link>
 <link rel="stylesheet" href="../../css/load.css">
@@ -240,7 +474,7 @@ button:hover {
             <ul>
                 <li><a href="../show.html">首页</a></li>
                 <li><a href="../album.html">相册</a></li>
-                <li><a href="../message.html">留言</a></li>
+                <li><a href="../musicBox.html">音乐</a></li>
                 <li>
                     <a href="../team.html">团队</a>
                     <ul class="sub-menu">
@@ -257,35 +491,72 @@ button:hover {
     </div>
  <a href="#" id="scrollToTopButton">返回顶部</a>
   </div>
+  <input type="checkbox" id="cb">
+  <label for="cb" class="iconfont icon-liebiao"></label>
+<div class="kuangjia">
+    <ul>
+        <li><a href="#section1">个人介绍</a></li>
+        <li><a href="#section2">工作经历</a></li>
+        <li><a href="#section3">相册</a></li>
+        <li><a href="#section4">留言板</a></li>
+    </ul>
+</div>
 
-    <div class="avatar-container" style="margin-top: 80px;">
-        <img src="../../src/team/huanghaowen/images/p2.jpg" alt="User Avatar">
-      </div>
-    <div class="box introduce">
-      <p class="iconfont icon-geren">个人介绍</p>
-        <ul>
-            <li>姓名:黄皓文</li>
-            <li>学历:本科在读</li>
-            <li>爱好:打羽毛球</li>
-            <li>家乡:广东</li>
-        </ul>
-        <p class="iconfont icon-zhuanyezhishijineng">专业技能</p>
-        <ul>
-          <li>熟练掌握至少一种主流编程语言，如Java、Python或C++，能够独立完成中等复杂度的编程任务。</li>
-          <li>掌握软件测试的基本方法和工具，能够编写单元测试用例，使用测试框架（如JUnit、pytest）进行自动化测试。</li>
-          <li>在软件开发过程中，为每个功能模块编写单元测试，确保代码的正确性和稳定性；参与集成测试和系统测试，发现并修复缺陷。</li>
-          
-        </ul>
-        <p class="iconfont icon-dianhua">联系方式</p>
-        <ul>
-          <li>邮箱:459972616@qq.com</li>
-          <li>电话:18169901327</li>
-          <li>微信:Chou_101</li>
-        </ul>
-    </div>
-    </div>
+      <section id="section1">
+        <div class="avatar-container" style="margin-top: 80px;">
+            <img src="../../src/team/huanghaowen/images/p2.jpg" alt="User Avatar">
+          </div>
+        <div class="box introduce">
+            <p class="iconfont icon-geren">个人介绍</p>
+              <ul>
+                  <li>姓名:黄皓文</li>
+                  <li>学历:广州新华学院本科在读</li>
+                  <li>爱好:打羽毛球</li>
+                  <li>家乡:广东</li>
+              </ul>
+              <p class="iconfont icon-zhuanyezhishijineng">专业技能</p>
+              <ul>
+                <li>熟练掌握至少一种主流编程语言，如Java、Python或C++，能够独立完成中等复杂度的编程任务。</li>
+                <li>掌握软件测试的基本方法和工具，能够编写单元测试用例，使用测试框架（如JUnit、pytest）进行自动化测试。</li>
+                <li>在软件开发过程中，为每个功能模块编写单元测试，确保代码的正确性和稳定性；参与集成测试和系统测试，发现并修复缺陷。</li>
+                
+              </ul>
+              <p class="iconfont icon-dianhua">联系方式</p>
+              <ul>
+                <li>邮箱:459972616@qq.com</li>
+                <li>电话:18169901327</li>
+                <li>微信:Chou_101</li>
+              </ul>
+          </div>
+          </div>
+      </section>
 
-      <div class="Album-container">
+      <section id="section2">
+        <div class="experience">
+            <h6>个人经历</h6>
+            <div class="experience-gallery">
+                <img src="../../src/team/huanghaowen/images/p2.jpg" alt="个人经历照片1" class="experience-photo">
+                <img src="../../src/team/huanghaowen/images/p3.jpg" alt="个人经历照片2" class="experience-photo">
+                <img src="../../src/team/huanghaowen/images/jay.jpg" alt="个人经历照片3" class="experience-photo">
+                <!-- 更多照片 -->
+            </div>
+            <ul>
+                <li>曾获得过中国大学生服务外包创新创业大赛团队一等奖</li>
+                <li>曾获得过中国软件杯”大学生软件设计大赛三等奖</li>
+                <li>曾获得过挑战杯”全国大学生课外学术科技作品竞赛二等奖</li>
+                <li>经过特训</li>
+                <li>参与慈善活动、社区建设等志愿服务</li>
+                <li>在某个组织或公司中的长期职位</li>
+            </ul>
+        </div>
+           
+              
+        </div>
+      </section>
+    
+            
+<section id="section3">
+    <div class="Album-container">
         <div class="album">
             
             <div class="album-header">
@@ -315,7 +586,29 @@ button:hover {
         </div>
       
     </div>
+</section>
 
+    <section id="section4" class="messagesBox">
+        <h1>留言板</h1>
+        <div class="messages">
+            <div class="form">
+                <input type="text" id="username" placeholder="用户名">
+                <textarea  id="message" placeholder="留言内容"></textarea>
+                <button id="submitBtn">留言</button>
+            </div>
+            <div id="messageBoard">
+                <div class="message">
+                    <div class="message-info">
+                        <div class="info"><img src="../../src/team/huanghaowen/images/雪花.png" width="50px" height="50px"></div>
+                        <strong>暴龙战士徒手捏爆小行星</strong>
+                    </div>
+                    <span>发布于：2024/12/27</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+   
     <script>
  var scrollToTopButton = document.getElementById('scrollToTopButton');
 
@@ -351,11 +644,91 @@ styles.textContent = `
     }
 `;
 document.head.appendChild(styles);
-    </script>
-   <script src="../../js/app.js"></script>
-    <script src="../../js/nav.js"></script>
+
+
+var radios = document.getElementsByClassName("radio");
+  var bars = document.getElementsByClassName("bar");
+  var slides = document.getElementsByClassName("slide");
+
+  for (var i = 0; i < bars.length; i++) {
+    bars[i].addEventListener("click", function() {
+      for (var j = 0; j < radios.length; j++) {
+        radios[j].checked = false;
+      }
+      document.getElementById(this.getAttribute("for")).checked = true;
+    });
+  }
+
+  for (var i = 0; i < radios.length; i++) {
+    radios[i].addEventListener("change", function() {
+      for (var j = 0; j < slides.length; j++) {
+        slides[j].style.display = "none"; // Hide all slides
+      }
+      var index = Array.from(radios).indexOf(this);
+      slides[index].style.display = "block"; // Show the selected slide
+      for (var j = 0; j < bars.length; j++) {
+        bars[j].classList.remove("active");
+        if (j === index) {
+          bars[j].classList.add("active");
+        }
+      }
+    });
+  }
+  document.getElementById('submitBtn').addEventListener('click', function() {
+    var username = document.getElementById('username').value.trim();
+    var message = document.getElementById('message').value.trim();
+    if (message === '') {
+        alert('请输入内容');
+        return;
+    }
+    if (username === '') {
+        username = '匿名';
+    }
+    var messageBoard = document.getElementById('messageBoard');
+    var newMessage = document.createElement('div');
+    var messageInfo = document.createElement('div');
+    var info = document.createElement('div');
+    var img = document.createElement('img');
+    var usernameText = document.createElement('strong');
+    var timeSpan = document.createElement('span');
+    var content = document.createElement('div');
+
+    img.src = "../../src/team/huanghaowen/images/雪花.png";
+    img.width = "50px";
+    img.height = "50px";
+    usernameText.textContent = username;
+    timeSpan.textContent = '发布于：' + getCurrentTime();
+    content.textContent = message;
+
+    messageInfo.className = 'message-info';
+    info.className = 'info';
+    info.appendChild(img);
+    info.appendChild(usernameText);
+    messageInfo.appendChild(info);
+    messageInfo.appendChild(timeSpan);
+    newMessage.className = 'message';
+    newMessage.appendChild(messageInfo);
+    newMessage.appendChild(content);
+    messageBoard.insertBefore(newMessage, messageBoard.firstChild);
+
+    document.getElementById('username').value = '';
+    document.getElementById('message').value = '';
+});
+
+function getCurrentTime() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = ('0' + (now.getMonth() + 1)).slice(-2);
+    var day = ('0' + now.getDate()).slice(-2);
+    var hour = ('0' + now.getHours()).slice(-2);
+    var minutes = ('0' + now.getMinutes()).slice(-2);
+    var seconds = ('0' + now.getSeconds()).slice(-2);
+    return year + '/' + month + '/' + day + ' ' + hour + ':' + minutes + ":" + seconds;
+}
+  </script>
+  <script src="../../js/app.js"></script>
+  <script src="../../js/nav.js"></script>
   </div>
 
- 
 </body>
 </html>

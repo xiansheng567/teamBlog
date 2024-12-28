@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>简易音乐播放器</title>
+    <link rel="stylesheet" href="../css/music.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../../css/load.css">
+</head>
+<body>
+    <div class="load"  id="load">
+        <img src="../../src/taichi.png">
+    </div>
+    <div class="navbar" id="navbar">
+        <nav>
+            <ul>
+                <li><a href="../html/show.html">首页</a></li>
+                <li><a href="album.html">相册</a></li>
+                <li class="active"><a href="musicBox.html">音乐</a></li>
+                <li>
+                    <a href="./team.html">团队</a>
+                    <ul class="sub-menu">
+                        <li><a href="./team/huangjunyu.html">黄俊煜</a></li>
+                        <li><a href="./team/huanghaowen.html">黄皓文</a></li>
+                        <li><a href="./team/huangjiangyang.html">黄建扬</a></li>
+                        <li><a href="./team/lijia.html">李佳</a></li>
+                        <li><a href="./team/lidenghuo.html">李邓活</a></li>
+                        <li><a href="./team/huangyubin.html">黄宇斌</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="left">
+            <div class="title" id="title" style="text-shadow: palevioletred 0px 0px 10px; color: white;">晚餐歌(弾き語りver)</div>
+            <div class="cdBox" id="cdBox">
+                <div class="cd"></div>
+            </div>
+            <div id="player" class="player">
+                <audio id="audio">
+                    <source src="../src/music/晚餐歌.mp3" type="audio/mpeg">
+                </audio>
+                <div class="info" id="info">
+                    <span>tuki.</span>
+                    <span>晩餐歌 (弾き語りver)</span>
+                </div>
+                <input type="range" class="slider" id="seek-bar" value="0">
+                <div class="button" id="controls">
+                    <button id="prev"></button>
+                    <button id="play"></button>
+                    <button id="next"></button>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="cyr">
+                <div id="lyric-container" class="lyric-container">
+                    <ul id="lyrics" class="lyrics">
+                    </ul>
+            </div>
+        </div>
+        <div class="list">
+            <div class="list-title" style="margin: 10px 0;">播放列表</div>
+            <div class="list-container">
+                <ul id="playlist" class="playlist">
+                    <li class="playlist-item" onclick="changeSong(0)">
+                        <div class="playlist-item-title">晚餐歌 (弾き語りver)</div>
+                        <div class="playlist-item-artist">tuki.</div>
+                    </li>
+                    <li class="playlist-item" onclick="changeSong(1)">
+                        <div class="playlist-item-title">サターン (土星)</div>
+                        <div class="playlist-item-artist">ずっと真夜中でいいのに。</div>
+                    </li>
+                    <li class="playlist-item" onclick="changeSong(2)">
+                        <div class="playlist-item-title">秒針を噛む</div>
+                        <div class="playlist-item-artist">ずっと真夜中でいいのに。</div>
+                    </li>
+                </ul>    
+        </div>
+    </div>
+    <script src="../js/music.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../../js/app.js"></script>
+</body>
+</html>

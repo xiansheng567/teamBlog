@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ FastIO</title>
+    <link rel="stylesheet" href="../../css/article/article.css">
+</head>
+<body>
+    <div class="container">
+        
+            
+        
+        <h1>C++ FastIO</h1>
+        <div class="header-tag">
+            <div class="date">📅 2024/10/16</div>
+            <div class="bookmark">🔖 OI</div>
+            <div class="tags">
+                <span class="tag">C/C++</span>
+                <span class="tag tag-secondary">C++20</span>
+                <span class="tag tag-info">FastIO</span>
+            </div>
+        </div>
+        <p>FastIO 是一个快速库。</p>
+        <p>支持基本类型读写，类似于 <code>cin</code> 和 <code>cout</code> 用法类似。</p>
+        <p>虽然相对于原版函数 <code>fread</code> <code>getchar</code> <code>putchar</code> 要快的。</p>
+
+        <h2>1. 目录解释</h2>
+        <div class="file-table">
+            <div class="file-row">
+                <span class="file-name">fastio.cpp</span>
+                <span class="file-description"># 测试代码</span>
+            </div>
+            <div class="file-row">
+                <span class="file-name">fastio.hpp</span>
+                <span class="file-description"># FastIO 库源代码</span>
+            </div>
+            <div class="file-row">
+                <span class="file-name">fastio.beta.hpp</span>
+                <span class="file-description"># FastIO 库源代码，使用 C++20</span>
+            </div>
+            <div class="file-row">
+                <span class="file-name">fastio.in</span>
+                <span class="file-description"># 测试输入数据</span>
+            </div>
+        </div>
+        <h2>2. 使用</h2>
+        <ul>
+            <li><code>using namespace fastio;</code></li>
+            <li>使用 FastIO。</li>
+            <li><code>using namespace fastio::symbols;</code></li>
+            <li>使用快捷符号，如 <code>endl</code>。</li>
+        </ul>
+
+        <p><code>is >> n;</code></p>
+        <p>读取 <code>n</code>。</p>
+
+        <p><code>is >> n >> m >> k;</code></p>
+        <p>读取 <code>n m k</code>。</p>
+
+        <p><code>c = is.get();</code></p>
+        <p>读取一个字符到 <code>c</code>。</p>
+
+        <p><code>is >> s;</code></p>
+        <p>读取一个字符串 <code>s</code>。</p>
+
+        <p><code>is.getline(s);</code></p>
+        <p>读取一行到 <code>s</code>。</p>
+
+        <p><code>is.getline(s, end);</code></p>
+        <p>读取字符到 <code>s</code>，一直读取到 <code>end</code> 停止。</p>
+
+        <p><code>is.get(s);</code></p>
+        <p><code>is.get(s, end);</code></p>
+        <p>读取字符到 <code>s</code>，一直读取到 <code>end</code> 停止，但 <code>end</code> 保留在流中。</p>
+
+        <p><code>is.ignore();</code></p>
+        <p>忽略一行。</p>
+
+        <p><code>is.ignore(end);</code></p>
+        <p>忽略字符到 <code>end</code> 停止。</p>
+
+        <p><code>while (is >> n);</code></p>
+        <p>一直读取直到末尾。</p>
+
+        <p><code>is >> bin; is >> oct; is >> dec; is >> hex;</code></p>
+        <p>按 2, 8, 10, 16 进制读取数。</p>
+
+        <p><code>is >> ws;</code></p>
+        <p>忽略前导空格。</p>
+
+        <p><code>is.setbase(n);</code></p>
+        <p>按 <code>base</code> 进制读取数 <code>(2 ≤ base ≤ 36)</code>。</p>
+
+        <p><code>is >> reset;</code></p>
+        <p>取消前面的所有设置。</p>
+
+        <p><code>os << n;</code></p>
+        <p>写入 <code>n</code>。</p>
+
+        <p><code>os << n << m << k;</code></p>
+        <p>写入 <code>n m k</code>。</p>
+        <p><code>os.put(c);</code></p>
+        <p>写入一个字符 <code>c</code>。</p>
+
+        <p><code>os << flush;</code></p>
+        <p>刷新流。</p>
+
+        <p><code>os << endl;</code></p>
+        <p>写入换行。</p>
+
+        <p><code>os << ends;</code></p>
+        <p>写入空格。</p>
+
+        <p><code>os << boolalpha;</code></p>
+        <p>设置写入 <code>bool</code> 时用 <code>true false</code>。</p>
+
+        <p><code>os << noboolalpha;</code></p>
+        <p>设置写入 <code>bool</code> 时用 <code>0 1</code>。</p>
+
+        <p><code>os << showpos;</code></p>
+        <p>设置写入正数和 <code>0</code> 时前面加 <code>+</code> 符号。</p>
+
+        <p><code>os << noshowpos;</code></p>
+        <p>设置写入正数和 <code>0</code> 时前面不加符号。</p>
+
+        <p><code>os << showpoint;</code></p>
+        <p>设置写入浮点数时总是添加小数点。</p>
+
+        <p><code>os << noshowpoint;</code></p>
+        <p>设置写入浮点数时不添加小数点。</p>
+        <p><code>os << fixed;</code></p>
+        <p>设置写入浮点数时保持 <code>setprecision</code> 时设置的位数。</p>
+
+        <p><code>os << defaultfloat;</code></p>
+        <p>设置写入浮点数时不保持 <code>setprecision</code> 时设置的位数。</p>
+
+        <p><code>os << bin;</code> <code>os << oct;</code> <code>os << dec;</code> <code>os << hex;</code></p>
+        <p>按 2, 8, 10, 16 进制写入整数。</p>
+
+        <p><code>os << lowercase;</code></p>
+        <p>写入特殊内容时时使用小写。</p>
+
+        <p><code>os << uppercase;</code></p>
+        <p>写入特殊内容时时使用大写。</p>
+
+        <p><code>os << showbase;</code></p>
+        <p>写入 2, 8, 16 进制时，前面显示 <code>0b</code> <code>0</code> <code>0x</code>。</p>
+
+        <p><code>os << noshowbase;</code></p>
+        <p>写入 2, 8, 16 进制时，不在前面显示 <code>0b</code> <code>0</code> <code>0x</code>。</p>
+
+        <p><code>os << setbase(n);</code></p>
+        <p>按 <code>base</code> 进制写入数，超出范围默认认为是 10 进制 <code>(2 ≤ base ≤ 36)</code>。</p>
+
+        <p><code>os << setw(n);</code></p>
+        <p>设置下一次写入宽度为 <code>width</code>，就填补字符（下一次写入重置）。</p>
+
+        <p><code>os << setfill(c);</code></p>
+        <p>设置填充字符。</p>
+        <p><code>os << left;</code></p>
+        <p>设置 <code>setw</code> 填补的字符在左边。</p>
+
+        <p><code>os << right;</code></p>
+        <p>设置 <code>setw</code> 填补的字符在右边。</p>
+
+        <p><code>os << setprecision(n);</code></p>
+        <p>设置浮点数保留位数，默认保留 3 位。</p>
+
+        <p><code>os << reset;</code></p>
+        <p>取消前面的所有设置。</p>
+
+        <p><code>ifstream ifs(s);</code></p>
+        <p>创建文件读取流，文件路径为 <code>s</code>，和普通读取流用法相同。</p>
+
+        <p><code>ofstream ofs(s);</code></p>
+        <p>创建文件写入流，文件路径为 <code>s</code>，和普通写入流用法相同。</p>
+        <h2>3. 接口</h2>
+        <p>可以用接口来重新运算符。</p>
+        <p>注意要用 <code>fastio::interface::istream</code> 和 <code>fastio::interface::ostream</code> 来重载。</p>
+        <p>以下不是重载 <code>std::tuple</code> 的实例程序。</p>
+
+        <pre>
+        using namespace fastio;
+
+        template &lt;typename... TS&gt;
+        interface::istream &amp;operator&gt;&gt;(interface::istream &amp;is, std::tuple&lt;TS...&gt; &amp;a) {
+            std::apply([&](auto &&...args) { (is &gt;&gt; args), ...; }, a);
+            return is;
+        }
+
+        template &lt;typename... TS&gt;
+        interface::istream &amp;operator&gt;&gt;(interface::istream &amp;is, std::tuple&lt;TS...&gt; &amp;&amp;a) {
+            std::apply([&](auto &&...args) { (is &gt;&gt; args), ...; }, a);
+            return is;
+        }
+
+        template &lt;typename... TS&gt;
+        interface::ostream &amp;operator&lt;&lt;(interface::ostream &amp;os, std::tuple&lt;TS...&gt; const &amp;a) {
+            std::apply([&](auto &&...args) { (os &lt;&lt; args &lt;&lt; ' '), ...; }, a);
+            return os;
+        }
+        </pre>
+    </div>
+    
+</body>
+</html>

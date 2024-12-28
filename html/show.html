@@ -6,6 +6,8 @@
     <title>ACG博客站</title>
     <link rel="stylesheet" href="../css/load.css">
     <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/show.css">
+    <script src="../js/show.js"></script>
 </head>
 <body>
     <div class="load"  id="load">
@@ -16,7 +18,7 @@
             <ul>
                 <li class="active"><a href="show.html">首页</a></li>
                 <li><a href="album.html">相册</a></li>
-                <li><a href="message.html">留言</a></li>
+                <li><a href="musicBox.html">音乐</a></li>
                 <li>
                     <a href="team.html">团队</a>
                     <ul class="sub-menu">
@@ -36,7 +38,11 @@
             <span><strong>ACG</strong></span>
             <span>博客站</span>
         </div>
-        <div class="loop"></div>
+        <div class="loop">
+            <div class="loop1">
+                <a href="#content" ></a>
+            </div>
+        </div>
         <div class="loop2"></div>
         <div class="loop3"></div>
         <div class="loop4"></div>
@@ -45,143 +51,159 @@
         <div class="mask" id="mask">
             
     </div>
+    <div class="main">
+        <div class="aside">
+            
+            <div class="hidden active" id="hidden">
+                <ul style="margin: 0; list-style: none;">
+                    <img src="../src/avatar/avatar.png" alt="avatar" class="avatar">
+                    <h2 style="text-align: center;">一名魂5</h2>
+                    <h3 style="text-align: center;">欢迎来到ACG博客站</h3>
+                    <li><a href="#mask">首页</a></li>
+                    <li><a href="#content" class="article-btn">文章</a>
+                        <div class="article-list">
+                            <a href="#article01">C++ FastIO</a>
+                            <a href="#article02">Queue</a>
+                            <a href="#article03">Hexo 博客搭建教程 </a>
+                        </div>
+                    </li>
+                    <li><a href="#comment-title">留言板</a></li>
+                    <li><a href="snake.html">小游戏</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="content active" id="content">
+            <button class="btn active" id="btn"><</button>
+            <h2>最新文章</h2>
+            <div class="article" id="article01">
+                <div class="title">C++ FastIO</div>
+                <div class="meta">
+                    <span>📅 2024/10/16</span>
+                </div>
+                <div class="cont">
+                    <p>FastIO 是一个快速读写库。</p>
+                    <p>支持基本类型读写，指针地址写入，以及 <span style="color: skyblue;">cin</span> <span style="color: skyblue;">cout</span> 用法类似。</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <span class="tag">C/C++</span>
+                    <span class="tag">C++20</span>
+                    <span class="tag">FastIO</span>
+                </div>
+                <a href="../html/article/article1.html" class="read-more">阅读全文</a>
+            </div>
+            <div class="article" style="max-height: 450px;" id="article02">
+                <div class="title">Queue</div>
+                <div class="meta">
+                    <span>📅 2023/8/11</span>
+                </div>
+                <div class="cont" >
+                    <p>Queue 是一个队列类。</p>
+                    <p>支持队列的基本操作，包括入队、出队、判空、判满。</p>
+                    <p>支持队列的遍历,广泛应用于图论、数据结构等领域。</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <span class="tag">C/C++</span>
+                    <span class="tag">C++20</span>
+                    <span class="tag">数据结构</span>
+                </div>
+                <a href="../html/article/article2.html" class="read-more">阅读全文</a>
+            </div>
+            <div class="article" id="article03">
+                <div class="title" >Hexo 博客搭建教程 I</div>
+                <div class="meta">
+                    <span>📅 2023/5/30</span>
+                </div>
+                <div class="cont">
+                    <p>Hexo 是一个快速、简洁且高效的博客框架。</p>
+                    <p>本教程将带领大家搭建一个基于 Hexo 的博客。</p>
+                    
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <span class="tag">Git</span>
+                    <span class="tag">Hexo</span>
+                    <span class="tag">Node.js</span>
+                    
+                </div>
+                <a href="../html/article/article3.html" class="read-more">阅读全文</a>
+            </div>
+            <!-- <div class="choose">
+                <a href="#" class="btn">1</a>
+                <a href="#" class="btn">2</a>
+                <a href="#" class="btn">下一页</a>
+            </div> -->
+            <h2 id="comment-title">留言板</h2>
+            <div class="container" >
+        
+        
+                <div class="comment-input">
+                    <div class="comment-input-header">
+                        <img src="../src/avatar/avatar.png" alt="avatar" class="avatar">
+                        <textarea placeholder="对留言进行了改进，现在只需要输入内容即可再点击发送就能提交留言。并在评论列表中显示留言的作者、时间、点赞数等信息。"   class="comment-input-textarea" id="comment-input-textarea"></textarea>
+                    </div>
+                    <button class="submit-button actives" id="submit-button">提交评论</button>
+                </div>
+                
+                <div class="comments-list" id="comments-list">
+                    <div class="comment">
+                        <div class="comment-author">
+                            <span class="author-avatar" >👤</span>
+                            <span class="author-name">strive-man</span>
+                            
+                        </div>
+                        <div class="comment-text">
+                            ^_^
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-date">2023年9月25日</div>
+                            <div class="comment-reaction">
+                                <button class="reaction-icon">👍</button> <span class="reaction-count">1</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-author">
+                            <span class="author-avatar">👤</span>
+                            <span class="author-name">everglow139</span>
+                        </div>
+                        <div class="comment-text">
+                            希望风翩而知远，见锚鱼而知渊。
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-date">2023年12月12日</div>
+                            <div class="comment-reaction">
+                                <button class="reaction-icon">👍</button> <span class="reaction-count">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="scene">
+            <div class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+        </div>
+        <div class="info">
+            联系我们：<EMAIL>
+                @ACG博客站  |  版权所有 © 2023-2024
+            </EMAIL>
+        </div>
+    </div>
     <script src="../js/app.js"></script>
     <script src="../js/nav.js"></script>
 </body>
 <style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    .header {
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        z-index: 999;
-        font-size: 50px;
-        font-weight: 600;
-     }
-    .mask {
-        display: flex;
-        height: 100vh;
-        position: relative;
-        background: url("../src/bg.png") center center no-repeat;
-        background-size: cover; /* 背景覆盖 */
-        z-index: -1;
-    }
-    .loop {
-        border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
-        background-color: hsl(0, 0%, 99%);
-        animation: loop 10s linear infinite;
-        width: 500px;
-        height: 500px;
-        opacity: 0.3;
-        transform: rotate(60deg);
-        /* position: absolute; */
-        
-        margin-top: 0px;
-        position: fixed;
-    }
-
-    .loop2 {
-        border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
-        background-color: hsl(0, 0%, 99%);
-        animation: loop2 20s linear infinite;
-        width: 500px;
-        height: 500px;
-        opacity: 0.5;
-        transform: rotate(60deg);
-        position: fixed;
-        
-        margin-top: 0px;
-    }
-
-    .loop3 {
-        border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
-        background-color: hsl(0, 0%, 99%);
-        animation: loop3 15s linear infinite;
-        width: 500px;
-        height: 500px;
-        opacity: 0.5;
-        transform: rotate(60deg);
-        position: fixed;
-        
-        margin-top: 0px;
-    }
-
-    .loop4 {
-        border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
-        background-color: hsl(0, 0%, 99%);
-        animation: loop4 25s linear infinite;
-        width: 500px;
-        height: 500px;
-        opacity: 0.5;
-        transform: rotate(60deg);
-        position: fixed;
-        
-        margin-top: 0px;
-    }
-    @keyframes loop {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes loop2 {
-        0% {
-            transform: rotate(60deg);
-        }
-
-        100% {
-            transform: rotate(420deg);
-        }
-    }
-
-    @keyframes loop3 {
-        0% {
-            transform: rotate(120deg);
-        }
-
-        100% {
-            transform: rotate(480deg);
-        }
-    }
-
-    @keyframes loop4 {
-        0% {
-            transform: rotate(180deg);
-        }
-
-        100% {
-            transform: rotate(540deg);
-        }
-    }
-    @keyframes touxiangb{
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-    .bigtitle {
-        width: 500px;
-        height: 500px;
-        text-align: center; /* 文字居中 */
-        position: absolute;
-        top: 50%; /* 垂直中心 */
-        left: 50%; /* 水平中心 */
-        transform: translate(-50%, -50%);
-    }
+    
 </style>
 </html>

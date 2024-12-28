@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexo 博客搭建教程</title>
+    <link rel="stylesheet" href="../../css/article/article.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hexo 博客搭建教程</h1>
+        <div class="header-tag">
+            <div class="date">📅 2023/5/30</div>
+            <div class="bookmark">🔖 OI</div>
+            <div class="tags">
+                <span class="tag">Git</span>
+                <span class="tag tag-secondary">Hexo</span>
+                <span class="tag tag-success">Node.js</span>
+            </div>
+        </div>
+        <h1>0. 前言</h1>
+        <p>
+            <a href="#">Hexo</a> 是一个快速、简洁且高效的博客框架，Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用顾盼的主题生成静态网页。
+        </p>
+        <p>
+            Markdown 可以查看 GitHub 的 <a href="#">基本撰写和格式语法</a>。
+        </p>
+        
+        <h1>1. 安装 Git 和 Node.js</h1>
+        <h2>1.1 Git</h2>
+        <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
+        <p>完成后用 <code>git --version</code> 命令检查，有提示即安装正确。</p>
+
+        <h2>1.2 Node.js</h2>
+        <a href="https://nodejs.org/">https://nodejs.org/</a>
+        <p>完成后用 <code>node -v</code> 命令检查，有提示即安装正确。</p>
+
+        <h1>2. 启用 Corepack（可选）</h1>
+        <p>运行 <code>corepack enable</code> 启用 Corepack。</p>
+        <p>启用后自动安装 Yarn 和 PNPM，这样以后的命令可以换成喜欢的包管理器，我一般用 PNPM。</p>
+        <h1>3. 安装 Hexo</h1>
+        <p>新建一个文件夹，作为博客目录，<code>cd</code> 进入文件夹，运行命令：</p>
+        <pre>pnpm add hexo-cli -g
+hexo init --no-install
+pnpm i</pre>
+
+        <h1>4. Hexo 的一些命令</h1>
+        <ul>
+            <li>生成静态文件：<code>hexo g</code>;</li>
+            <li>清空静态文件：<code>hexo cl</code>;</li>
+            <li>在本地运行：<code>hexo s</code>;</li>
+            <li>部署到网站：<code>hexo d</code>;</li>
+            <li>生成静态文件并部署到网站：<code>hexo d -g</code> 或 <code>hexo g -d</code>;</li>
+            <li>创建新文章：<code>hexo new &lt;file&gt;</code>。</li>
+        </ul>
+        <p>P.S. 创建新文章命令中的 &lt;file&gt; 是文件名，标题在文章中的 <code>title</code> 参数中修改。</p>
+    </div>
+</body>
+</html>

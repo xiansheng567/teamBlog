@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4770634_hqaf7pezmsw.css">
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -51,18 +54,6 @@
             font-weight: normal;
         }
 
-        /* aside {
-            position: fixed;
-            top: 305px;
-            width: 250px;
-            height: 300px;
-            background-color: #fff;
-            padding: 10px;
-            margin-right: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.5s ease;
-            border-radius: 5%;
-        } */
 
         .tou {
             display: flex;
@@ -76,7 +67,7 @@
             bottom: 3px;
             content: "";
             position: relative;
-            width:100px;
+            width: 100px;
             aspect-ratio: 1;
             border-radius: 50%;
             background-image: linear-gradient(#a00, #d5a88b, #124c5c);
@@ -84,9 +75,9 @@
 
         .tou img {
             width: 90px;
-margin-top: 5px;
+            margin-top: 5px;
             position: absolute;
-             top: -30;
+            top: -30;
             box-shadow: 0 0 15px rgba(161, 45, 45, 0.8);
             border-radius: 50%;
             margin-bottom: 10px;
@@ -103,10 +94,10 @@ margin-top: 5px;
         }
 
         .ps {
-
+            padding: 3px;
             border-radius: 10px;
             border: 2px solid #a00;
-            margin: 8px 0;
+            margin: 10px 0;
             width: 80%;
             height: 35px;
             text-align: center;
@@ -150,8 +141,8 @@ margin-top: 5px;
 
         .cart-num {
             position: relative;
-            top: -50px;
-            right: -230px;
+            top:0;
+            right: -50%;
             background-color: #a00;
             color: #fff;
             padding: 5px 10px;
@@ -159,7 +150,7 @@ margin-top: 5px;
             font-size: 0.8em;
         }
 
-        .main {
+        .amain {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -168,7 +159,7 @@ margin-top: 5px;
         }
 
         .atop {
-
+position: relative;
             width: 80%;
             height: 50px;
             background-color: #F1F2F3;
@@ -193,210 +184,256 @@ margin-top: 5px;
             align-items: center;
             margin: auto;
         }
-    table{
-        position: relative;
-        width: 100%;
-        border-collapse: collapse;
-        line-height: 2;
-    }
-    .ta-info td{
-        border-bottom: 1px dotted #ccc;
-    }
-    .atop a{
-        text-decoration: none;
-        color: #000;
-    }
-    .picture{
-        display: flex;
-        justify-content: center;
-    }
-    .picture img{
+
+        table {
+            position: relative;
+            width: 100%;
+            border-collapse: collapse;
+            line-height: 2;
+        }
+
+        .ta-info td {
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .atop a {
+            text-decoration: none;
+            color: #000;
+        }
+
+
+        .wrap {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            background-color: #eee;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .lazy-background {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            /* 初始状态不可见 */
+        }
+
+        /* 定义动画 */
+        @keyframes mov-left {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes mov-right {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes mov-down {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes mov-up {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .skill{
+          width: 80%;
+           margin: auto;
+          
+        }
+          .skill .sinfo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--p--m--g);
+            font-size: 1.4rem;
+            margin-bottom: calc(2*var(--p--m--g));
+          }
+          .skill .bar{
+            display: flex;
+            flex: 1;
+            height: 1.2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--color);
+            padding: 2px;
+              justify-content: flex-end;
+          }
+          .skill .bar::before{
+            content: '';
+            width: calc(var(--per)* 1%);
+            height: 100%;
+            border-radius: 1rem;
+            background-color: var(--color);
+          }
+          .skill .sinfo span:first-child{
+            flex-basis: 8rem;
+          }
+          .massage{
+            max-width: 800px;
+            margin:  auto;
+          }
+          input[type='text']
+        {
+            width: 100%;
+            border: none;
+            font: inherit;
+            color: inherit;
+            outline: none;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            height: 40px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .input-box{
+            position: relative;
+            width: 100%;
+            height: 4rem;
+            border: 1px solid var(--color-pink);
+            border-radius: var(--border-r);
+        }
+        .input-box label{
+            position: absolute;
+            right: 8px;
+            top: -1.5rem;
+            line-height: 4rem;
+            padding: 0 var(--p--m--g);
+            pointer-events: none;
+           color: #973443;
+           background-color: #fff;
+        }
+        textarea {
+            resize: none;
+            border: none;
+            outline: none;
+            font: inherit;
+            color: inherit;
+            padding: 0 10px;
+        
+        }
+        .ta {
+            width: 100%;
+            height: 120px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            border: none;
+            outline: none;
+            font: inherit;
+            color: inherit;
+            background-color: transparent;
+            cursor: pointer;
+            border-radius: 5px;
+            margin:  10px 0;
+        }
+        .btn {
+            background-color: #f40;
+            color: #fff;
+            border: 1px solid #f40;
+            padding: 10px 30px;
+        }
+
+        .reset {
+            background-color: transparent;
+            color: #f40;
+        }
+       .awards{
         width: 80%;
-    height: 80%;
-    object-fit: cover;
-    }
-    footer{
-        display: flex;
-        align-items: center;
-        margin: 2rem auto;
-    }
-    footer span:first-child{
-        text-align: center;
-    }
-    footer span{
-        flex: 1;
-        font-size: 1.2rem;
-    }
-    </style>
-      <style>
-        .head {
-              width: 100%;
-              display: flex;
-              top: 0;
-              position: sticky;
-              height: 60px;
-              background-color: #fff;
-              border-bottom: 2px solid #ccc;
-              justify-content: space-between;
-              border-radius: 10px;
-             
-          }
-  
-          .top {
-              width: 300px;
-              height: 60px;
-              display: flex;
-              gap: 2rem;
-              margin-top: 16px;
-          }
-  
-          .head a {
-              color: bisque;
-              text-decoration: none;
-          }
-  
-          .nav {
-              /* width: 100px; */
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              gap: 0.4rem;
-          }
-  
-          .head h1 {
-              position: relative;
-              font-size: 2rem;
-              font-weight: normal;
-              margin: 10px;
-          }
-          .toTop {
-              position: fixed;
-              width: 20px;
-              aspect-ratio: 1;
-              bottom: 200px;
-              right: 90px;
-              padding: 10px 10px;
-              border-radius: 50%;
-              cursor: pointer;
-          }
-  
-          .icon-UP {
-              font-size: 40px !important;
-          }
-  
-      .wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-        position: relative;
-        width: 800px;
-        height: 800px;
-        /* aspect-ratio: 16/9; */
-        background-color: #eee;
-        overflow: hidden;
         margin: auto;
-      }
-  
-      .wrap>* {
-        position: absolute;
-      
-      }
-  
-      /* header,
-      aside,
-      main,
-      footer {
-        position: absolute;
-      } */
-     .wrap header {
-        width: 50%;
-        height: 50%;
-        background-color: #f40;
-        left: 0;
-        top: -400px;
-        animation: mov-down 1s forwards;
-        background-image: url('../../src/team/lidenghuo/preview1.jpg');
-        background-size: cover;
-      }
-  
-    .wrap  footer {
-          width: 50%;
-          height: 50%;
-        background-color: #089;
-        left: 400px;
-        bottom: -400px;
-        animation: mov-up 1s 0.5s forwards;
-        background-image: url('../../src/team/lidenghuo/bg4.webp');
-        background-size: cover;
-      }
-  
-    .wrap  aside {
-        left: -400px;
-        top: 400px;
-        width: 50%;
-        height: 50%;
-        background-color: #ff0;
-        animation: mov-right 1s 1s forwards;
-        background-image: url('../../src/team/lidenghuo/bg3.webp');
-        background-size: cover;
-      }
-    .wrap  main{
-          width: 50%;
-          height: 50%;
-  right: -400px;
-  top:0px;
-  background-color: #ff0;
-  animation: mov-left 1s 1s forwards;
-  background-image: url('../../src/team/lidenghuo/preview.jpg');
-  background-size: cover;
-      }
-  @keyframes mov-left{
-      100%{
-          right: 0;
-      }
-  }
-      @keyframes mov-right {
-        100% {
-          left: 0;
+       
+       }
+.awards-section {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  box-shadow: 2px 3px 5px #ccc;
+}
+
+
+.awards-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+
+.award-item {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+
+.award-name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+
+.award-details {
+  font-style: italic;
+  color: #666;
+}
+
+
+.award-reason {
+  color: #555;
+}
+.awards li{
+    list-style: none;
+}
+        footer {
+            display: flex;
+            align-items: center;
+            margin: 2rem auto;
         }
-      }
-  
-      @keyframes mov-down {
-        100% {
-          top: 0;
+
+        footer span:first-child {
+            text-align: center;
         }
-      }
-  
-      @keyframes mov-up {
-        100% {
-          bottom: -32px;
+
+        footer span {
+            flex: 1;
+            font-size: 1.2rem;
         }
-      }
-      .main {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              box-sizing: border-box;
-              margin: 30px;
-          }
-  
-          .atop {
-  
-              width: 80%;
-              height: 50px;
-              background-color: #F1F2F3;
-              box-shadow: 2px 3px 5px #ccc;
-              padding: 15px;
-              border-radius: 5px;
-          }
-  
-          .atop-text {
-              color: #4BC2CE;
-              font-size: 30px;
-              font-weight: bold;
-          }
-  
     </style>
+
     <link rel="stylesheet" href="../../css/nav.css">
 </head>
 
@@ -406,7 +443,7 @@ margin-top: 5px;
             <ul>
                 <li><a href="../show.html">首页</a></li>
                 <li><a href="../album.html">相册</a></li>
-                <li><a href="../message.html">留言</a></li>
+                <li><a href="../musicBox.html">音乐</a></li>
                 <li>
                     <a href="../team.html">团队</a>
                     <ul class="sub-menu">
@@ -425,87 +462,149 @@ margin-top: 5px;
 
     </div>
     <aside>
-     
+
     </aside>
     <main>
-        <div class="main">
+        <div class="amain">
 
             <div class="atop">
-                <span class="atop-text">introduction</span>
+                <span class="atop-text">介绍</span>
             </div>
         </div>
         <div class="home">
             <div>
-            <div class="tou">
-                <img src="../../src/team/lidenghuo/preview1.jpg" alt="">
+                <div class="tou">
+                    <img src="../../src/team/lidenghuo/preview1.jpg" alt="">
+                </div>
+                <div class="pas">
+                    <div class="ps">
+                        <a href="javascript::" class="iconfont icon-gouwuche">购物车</a>
+                        <span class="cart-num">0</span>
+                    </div>
+                    <div class="ps">
+                        <p>资料</p>
+                    </div>
+                    <div class="ps">
+                        <p>中心</p>
+                    </div>
+                </div>
             </div>
-            <div class="pas">
-                <div class="ps">
-                    <a href="javascript::" class="iconfont icon-gouwuche">购物车</a>
-                </div>
-                <div class="ps">
-                    <p>资料</p>
-                </div>
-                <div class="ps">
-                    <p>中心</p>
-                </div>
-            </div>
-        </div>
             <div>
                 <h3>基本情况</h3>
                 <table class="ta-info">
                     <tbody>
-                        <tr><td>姓名：</td>
-                        <td>李邓活</td></tr>
-                        <tr><td>学校：</td>
-                        <td>广州新华学院</td></tr>
-                        <tr><td>专业：</td>
-                        <td>软件工程</td></tr>
+                        <tr>
+                            <td>姓名：</td>
+                            <td>李邓活</td>
+                        </tr>
+                        <tr>
+                            <td>学校：</td>
+                            <td>广州新华学院</td>
+                        </tr>
+                        <tr>
+                            <td>专业：</td>
+                            <td>软件工程</td>
+                        </tr>
                         <tr>
                             <td>年龄：</td>
-                        <td>19</td></tr>
-                        <tr><td>爱好：</td>
-                        <td>打球，刷视频</td></tr>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <td>爱好：</td>
+                            <td>打球，刷视频</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="main">
+        <div class="amain">
 
             <div class="atop">
-                <span class="atop-text"><a href="1.html">美文展示</a></span>
+                <span class="atop-text">掌握技能</span>
             </div>
         </div>
-        <div class="picture">
-            <img src="../../src/team/lidenghuo/屏幕截图 2024-12-22 151729.png" alt="">
+        <div class="skill">
+            <div class="sinfo">
+                <span>HTML</span>
+                <div class="bar" style="--per:60;--color:#f40"></div>
+                <span>60%</span>
+            </div>
+            <div class="sinfo">
+                <span>CSS</span>
+                <div class="bar" style="--per:60;--color:#38ada9"></div>
+                <span>60%</span>
+            </div>
+            <div class="sinfo">
+                <span>JavaScript</span>
+                <div class="bar" style="--per:55;--color:#78e08f"></div>
+                <span>55%</span>
+            </div>
+            <div class="sinfo">
+                <span>Java</span>
+                <div class="bar" style="--per:65;--color:#f9ca24"></div>
+                <span>65%</span>
+            </div>
+            <div class="sinfo">
+                <span>C++</span>
+                <div class="bar" style="--per:70;--color:#ffbe76"></div>
+                <span>70%</span>
+            </div>
         </div>
-        <div class="hea" id="top">
+       <div class="amain">
+        <div class="atop">
+           <span class="atop-text"> 奖项</span>
+        </div>
+       </div>
+       <div class="awards">
+        <section class="awards-section">
+            <h2 class="awards-title">奖项与荣誉</h2>
+            <ul>
+              <li class="award-item">
+                <span class="award-name">最佳前端开发者</span>
+                <span class="award-details">由技术大会颁发，2024年</span>
+                <p class="award-reason">因对网页开发做出的杰出贡献。</p>
+              </li>
+            </ul>
+          </section>
+       </div>
+        <div class="amain">
 
-        </div>
-        <div class="main">
-    
             <div class="atop">
                 <span class="atop-text">我的相册</span>
             </div>
         </div>
-      <div class="wrap">
-        <header>
-            
-        </header>
-        <aside>
-            
-        </aside>
-        <main>
-            
-        </main>
-        <footer>
-            
-        </footer>
-      </div>
+        <div class="wrap">
+            <div class="lazy-background header" data-bg="../../src/team/lidenghuo/preview1.jpg"></div>
+            <div class="lazy-background footer" data-bg="../../src/team/lidenghuo/bg3.webp"></div>
+            <div class="lazy-background aside" data-bg="../../src/bg5.webp"></div>
+            <div class="lazy-background main" data-bg="../../src/team/lidenghuo/preview.jpg"></div>
+        </div>
+        <div class="amain">
+            <div class="atop">
+                <span class="atop-text">留言</span>
+            </div>
+        </div>
+        <div class="massage">
+        <form action="http://www.baidu.com">
+            <h3>留言</h3>
+            <div class="input-box">
+            <input type="text" name="uname" id="uname" placeholder="your name here" required maxlength="10">
+   <label >昵称</label>
+</div>
+<div class="input-box">
+            <input type="text" name="uname" id="email" placeholder="your email here" required maxlength="10">
+    <label>邮箱</label>
+</div>
+            <textarea class="ta" name="umsg" id="ta" maxlength="30" required placeholder="your message here"></textarea>
+    
+            <button class="btn submmit" type="submit">提交</button>
+            <button class="btn reset" type="reset">重置</button>
+        </form>
+    </div>
     </main>
     <footer>
-      <span>All rights reeserved©2024 ldh<br>此页面仅用于学习交流</span>
-      
+        <span>All rights reeserved©2024 ldh<br>此页面仅用于学习交流</span>
+
     </footer>
     <a href="#top">
         <div class="toTop">
@@ -513,6 +612,8 @@ margin-top: 5px;
         </div>
     </a>
     <script src="../../js/nav.js"></script>
+    <script src="../../js/team/script.js"> </script>
+
 </body>
 
 </html>
