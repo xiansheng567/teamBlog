@@ -52,3 +52,6 @@ nav ul li:hover .sub-menu {
 .sub-menu li {
     display: inline-block;
 }
+nav *{
+    user-select: none;
+}

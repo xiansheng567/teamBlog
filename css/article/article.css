@@ -2,9 +2,12 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
-
+*{
+    margin: 0%;
+    padding: 0%;
+}
 .container {
     display: flex;
     margin: 100px 379px;
@@ -26,22 +29,20 @@ h2 {
     font-size: 20px;
     color: #1a1a1a;
     margin-top: 20px;
-    h2 {
     margin-top: 20px;
 }
-}
 
-ul {
+.container ul {
     list-style-type: disc;
     padding-left: 20px;
     margin: 10px 0;
 }
-li {
+.container li {
     margin: 5px 0;
     line-height: 1.5;
     list-style: none;
 }
-p {
+.container p {
     margin: 15px 0;
 }
 .header-tag {
@@ -117,13 +118,13 @@ pre {
     border-radius: 20px;
     box-shadow: 0px 0px 10px #ccc;
 }
-a {
+.container a {
     color: #4a96e0;
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
 }
 
-a:hover {
+.container a:hover {
     text-decoration: underline;
 }
